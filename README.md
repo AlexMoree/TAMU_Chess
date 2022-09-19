@@ -21,4 +21,10 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* docker run --rm -it --volume "$(pwd):/csce431" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 dmartinez05/ruby_rails_postgresql:latest
+
+* Bundle Install 
+* rails db:create
+* rails db:migrate
+* rails server --binding=0.0.0.0
+* http://127.0.0.1:3000/
