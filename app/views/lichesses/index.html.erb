@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lichesses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Username</th>
+      <th>Rank</th>
+      <th>Total played</th>
+      <th>Win</th>
+      <th>Draw</th>
+      <th>Loss</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lichesses.each do |lichess| %>
+      <tr>
+        <td><%= lichess.student_id %></td>
+        <td><%= lichess.username %></td>
+        <td><%= lichess.rank %></td>
+        <td><%= lichess.total_played %></td>
+        <td><%= lichess.win %></td>
+        <td><%= lichess.draw %></td>
+        <td><%= lichess.loss %></td>
+        <td><%= link_to 'Show', lichess %></td>
+        <td><%= link_to 'Edit', edit_lichess_path(lichess) %></td>
+        <td><%= link_to 'Destroy', lichess, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Update', lichesses_path %>
+
+<br>
+
+<%= link_to 'Back', personal_informations_path %>

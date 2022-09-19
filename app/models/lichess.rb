@@ -1,0 +1,2 @@
+class Lichess < ApplicationRecord
+end

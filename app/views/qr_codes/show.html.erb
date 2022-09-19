@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event ID:</strong>
+  <%= @qr_code.event_id %>
+</p>
+
+<p>
+  <strong>Attendence link:</strong>
+  <%= @qr_code.attendence_link %>
+</p>
+
+<%= link_to 'Edit', edit_qr_code_path(@qr_code) %> |
+<%= link_to 'Back', qr_codes_path %>

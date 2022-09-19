@@ -1,0 +1,52 @@
+<%= form_with(model: lichess) do |form| %>
+  <% if lichess.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lichess.errors.count, "error") %> prohibited this lichess from being saved:</h2>
+
+      <ul>
+        <% lichess.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <%= form.number_field :student_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rank %>
+    <%= form.number_field :rank %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_played %>
+    <%= form.number_field :total_played %>
+  </div>
+
+  <div class="field">
+    <%= form.label :win %>
+    <%= form.number_field :win %>
+  </div>
+
+  <div class="field">
+    <%= form.label :draw %>
+    <%= form.number_field :draw %>
+  </div>
+
+  <div class="field">
+    <%= form.label :loss %>
+    <%= form.number_field :loss %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

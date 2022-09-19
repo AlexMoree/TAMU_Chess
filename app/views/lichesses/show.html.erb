@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @lichess.student_id %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @lichess.username %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @lichess.rank %>
+</p>
+
+<p>
+  <strong>Total played:</strong>
+  <%= @lichess.total_played %>
+</p>
+
+<p>
+  <strong>Win:</strong>
+  <%= @lichess.win %>
+</p>
+
+<p>
+  <strong>Draw:</strong>
+  <%= @lichess.draw %>
+</p>
+
+<p>
+  <strong>Loss:</strong>
+  <%= @lichess.loss %>
+</p>
+
+<%= link_to 'Edit', edit_lichess_path(@lichess) %> |
+<%= link_to 'Back', lichesses_path %>

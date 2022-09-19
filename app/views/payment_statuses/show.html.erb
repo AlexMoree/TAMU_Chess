@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @payment_status.student_id %>
+</p>
+
+<p>
+  <strong>Membership:</strong>
+  <%= @payment_status.membership %>
+</p>
+
+<p>
+  <strong>Start Date:</strong>
+  <%= @payment_status.start_date %>
+</p>
+
+<p>
+  <strong>End Date:</strong>
+  <%= @payment_status.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_payment_status_path(@payment_status) %> |
+<%= link_to 'Back', payment_statuses_path %>

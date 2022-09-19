@@ -1,0 +1,2 @@
+module LichessesHelper
+end

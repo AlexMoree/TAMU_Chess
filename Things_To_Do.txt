@@ -1,0 +1,5 @@
+1. Proper relation establishment between personal_information and payment_status
+2. Fix attended student id list of attendence table 
+3. QR_codes and Attendence table relation establishment
+4. QR_codes table modification (sign up link)
+5. 
