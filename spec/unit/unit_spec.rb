@@ -1,7 +1,7 @@
 # location: spec/unit/unit_spec.rb
 require 'rails_helper'
 
-RSpec.describe personal_information, type: :model do
+RSpec.describe new_personal_information, type: :model do
   subject do
     described_class.new(student: '8107358989')
   end

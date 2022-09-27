@@ -10,7 +10,7 @@ RSpec.describe 'Creating a new personal information account', type: :feature do
     fill_in 'Classification', with: 'Construction Engineering'
     fill_in 'Major', with: 'Freshmam'
     click_on 'Create Personal Information'
-    visit personal_information_path
+    visit personal_informations_path
     expect(page).to have_content('1111111111')
     expect(page).to have_content('Jared')
     expect(page).to have_content('Smith')
