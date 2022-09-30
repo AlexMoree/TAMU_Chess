@@ -59,12 +59,12 @@ class LichessesController < ApplicationController
   end
 
 
-  helper_method :get_http_request
+  helper_method :get_http_request_lichess
 
-  def get_http_request(username)
+  def get_http_request_lichess(username)
     uri = URI('https://lichess.org/api/user/' + username)
     # blitz, rapids, total
-    stats = [0, 0, 0]
+    stats = []
     #username = 'alireza2003'
     res = Net::HTTP.get_response(uri)
     #Net::http.request_get(url + username) {|res|

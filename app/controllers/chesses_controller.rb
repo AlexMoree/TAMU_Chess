@@ -1,5 +1,7 @@
 class ChessesController < ApplicationController
   before_action :set_chess, only: %i[ show edit update destroy ]
+  require 'net/http'
+  require 'json'
 
   # GET /chesses or /chesses.json
   def index
@@ -55,6 +57,44 @@ class ChessesController < ApplicationController
       format.html { redirect_to chesses_url, notice: "Chess was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+
+  helper_method :get_http_request_chess
+
+  def get_http_request_chess(username)
+    uri = URI('https://api.chess.com/pub/player/' + username + '/stats')
+    # uri = URI('https://api.chess.com/pub/player/AnaKuchava/stats')
+    # blitz, rapids, total
+    stats = []
+
+    res = Net::HTTP.get_response(uri)
+    #Net::http.request_get(url + username) {|res|
+    full_data = JSON.parse(res.body)
+
+    # puts full_data
+
+    # puts full_data["chess_blitz"]["last"]["rating"]
+    # puts full_data["chess_rapid"]["last"]["rating"]
+
+    count = 0;
+
+    count += full_data["chess_blitz"]["record"]["win"]
+    count += full_data["chess_blitz"]["record"]["loss"]
+    count += full_data["chess_blitz"]["record"]["draw"]
+
+    count += full_data["chess_rapid"]["record"]["win"]
+    count += full_data["chess_rapid"]["record"]["loss"]
+    count += full_data["chess_rapid"]["record"]["draw"]
+
+    # puts count
+    stats <<  full_data["chess_blitz"]["last"]["rating"]
+    stats <<  full_data["chess_rapid"]["last"]["rating"]
+    stats <<  count
+
+    puts stats
+    return stats
+
   end
 
   private
