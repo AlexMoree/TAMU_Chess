@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_29_212117) do
+ActiveRecord::Schema.define(version: 2022_09_30_030934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,21 @@ ActiveRecord::Schema.define(version: 2022_09_29_212117) do
     t.integer "total_played"
   end
 
+  create_table "homes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "lichesses", force: :cascade do |t|
-    t.string "lichess_com_username"
+    t.string "lichess_org_username"
     t.integer "blitz"
     t.integer "rapid"
     t.integer "total_played"
+  end
+
+  create_table "logins", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
   end
 
   create_table "personal_informations", force: :cascade do |t|

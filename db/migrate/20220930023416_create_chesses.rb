@@ -5,7 +5,7 @@ class CreateChesses < ActiveRecord::Migration[6.1]
       t.integer :blitz
       t.integer :rapid
       t.integer :total_played
-
+      
     end
   end
 end

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lichesses</h1>
+<h1>Lichess.org</h1>
 
 <table>
   <thead>
@@ -16,7 +16,7 @@
   <tbody>
     <% @lichesses.each do |lichess| %>
       <tr>
-        <td><%= lichess.lichess_com_username %></td>
+        <td><%= lichess.lichess_org_username %></td>
         <td><%= lichess.blitz %></td>
         <td><%= lichess.rapid %></td>
         <td><%= lichess.total_played %></td>
@@ -29,9 +29,8 @@
 </table>
 
 <br>
-
-<%= link_to 'Update', lichesses_path %>
-
 <br>
-
-<%= link_to 'Back', personal_informations_path %>
+<%= link_to 'Update', lichesses_path %>
+<br>
+<br>
+<%= link_to 'Back', homes_path %>
