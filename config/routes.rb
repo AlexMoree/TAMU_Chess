@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :lichesses
-  resources :qr_codes
+  resources :qr_codess
   resources :attendences
-  resources :payment_statuses
+  resources :chesses
   resources :personal_informations
 
   root 'personal_informations#index'

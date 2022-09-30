@@ -10,49 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_19_055546) do
+ActiveRecord::Schema.define(version: 2022_09_29_212117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attendences", force: :cascade do |t|
-    t.integer "event_id"
-    t.string "event_name"
-    t.date "event_date"
-    t.integer "attendence", default: [], array: true
+    t.string "uin"
+    t.date "day_of_event"
+  end
+
+  create_table "chesses", force: :cascade do |t|
+    t.string "chess_com_username"
+    t.integer "blitz"
+    t.integer "rapid"
+    t.integer "total_played"
   end
 
   create_table "lichesses", force: :cascade do |t|
-    t.integer "student_id"
-    t.string "username"
-    t.integer "rank"
+    t.string "lichess_com_username"
+    t.integer "blitz"
+    t.integer "rapid"
     t.integer "total_played"
-    t.integer "win"
-    t.integer "draw"
-    t.integer "loss"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "payment_statuses", force: :cascade do |t|
-    t.integer "student_id"
-    t.boolean "membership"
-    t.date "start_date"
-    t.date "end_date"
   end
 
   create_table "personal_informations", force: :cascade do |t|
-    t.integer "student_id"
+    t.string "uin"
     t.string "first_name"
     t.string "last_name"
-    t.date "date_of_birth"
-    t.string "classification"
-    t.string "major"
+    t.string "email"
+    t.boolean "membership"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "discord_username"
+    t.string "chess_com_username"
+    t.string "lichess_org_username"
   end
 
   create_table "qr_codes", force: :cascade do |t|
-    t.integer "event_id"
-    t.string "attendence_link"
+    t.string "title"
+    t.string "qr_url"
   end
 
 end

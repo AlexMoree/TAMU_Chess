@@ -65,6 +65,6 @@ class PersonalInformationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def personal_information_params
-      params.require(:personal_information).permit(:student_id, :first_name, :last_name, :date_of_birth, :classification, :major)
+      params.require(:personal_information).permit(:uin, :first_name, :last_name, :email, :membership, :start_date, :end_date, :discord_username, :chess_com_username, :lichess_org_username)
     end
 end

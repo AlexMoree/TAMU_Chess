@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :student_id %>
-    <%= form.number_field :student_id %>
+    <%= form.label :uin %>
+    <%= form.text_field :uin %>
   </div>
 
   <div class="field">
@@ -27,18 +27,23 @@
   </div>  
 
   <div class="field">
-    <%= form.label :date_of_birth %>
-    <%= form.date_field :date_of_birth, start_year:1950, end_year:2022 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :classification %>
-    <%= form.text_field :classification %>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
   </div>  
 
   <div class="field">
-    <%= form.label :major %>
-    <%= form.text_field :major %>
+    <%= form.label :discord_username %>
+    <%= form.text_field :discord_username %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :chess_com_username %>
+    <%= form.text_field :chess_com_username %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :lichess_org_username %>
+    <%= form.text_field :lichess_org_username %>
   </div>  
 
   <div class="actions">

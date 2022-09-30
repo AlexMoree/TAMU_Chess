@@ -1,12 +1,16 @@
 class CreatePersonalInformations < ActiveRecord::Migration[6.1]
   def change
     create_table :personal_informations do |t|
-      t.integer :student_id
+      t.string :uin
       t.string :first_name
       t.string :last_name
-      t.date :date_of_birth
-      t.string :classification
-      t.string :major
+      t.string :email
+      t.boolean :membership
+      t.date :start_date
+      t.date :end_date 
+      t.string :discord_username
+      t.string :chess_com_username
+      t.string :lichess_org_username
 
     end
   end
