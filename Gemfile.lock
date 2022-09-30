@@ -84,6 +84,7 @@ GEM
     diff-lcs (1.5.0)
     docile (1.4.0)
     erubi (1.11.0)
+    excon (0.93.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -257,6 +258,7 @@ DEPENDENCIES
   brakeman
   byebug
   capybara (>= 3.26)
+  excon
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
