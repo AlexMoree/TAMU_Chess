@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Student:</strong>
-  <%= @personal_information.student_id %>
+  <strong>UIN:</strong>
+  <%= @personal_information.uin %>
 </p>
 
 <p>
@@ -16,18 +16,38 @@
 </p>
 
 <p>
-  <strong>Date of Birth:</strong>
-  <%= @personal_information.date_of_birth %>
+  <strong>Email:</strong>
+  <%= @personal_information.email %>
 </p>
 
 <p>
-  <strong>Classification:</strong>
-  <%= @personal_information.classification %>
+  <strong>Discord Username:</strong>
+  <%= @personal_information.discord_username %>
 </p>
 
 <p>
-  <strong>Major:</strong>
-  <%= @personal_information.major %>
+  <strong> Membership:</strong>
+  <%= @personal_information.membership %>
+</p>
+
+<p>
+  <strong>Start Date:</strong>
+  <%= @personal_information.start_date %>
+</p>
+
+<p>
+  <strong>End Date:</strong>
+  <%= @personal_information.end_date %>
+</p>
+
+<p>
+  <strong>Chess.com Username:</strong>
+  <%= @personal_information.chess_com_username %>
+</p>
+
+<p>
+  <strong>Lichess.org Username:</strong>
+  <%= @personal_information.lichess_org_username %>
 </p>
 
 <%= link_to 'Edit', edit_personal_information_path(@personal_information) %> |

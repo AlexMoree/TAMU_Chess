@@ -1,6 +1,7 @@
 class LichessesController < ApplicationController
   before_action :set_lichess, only: %i[ show edit update destroy ]
-
+  require 'net/http'
+  require 'json'
   # GET /lichesses or /lichesses.json
   def index
     @lichesses = Lichess.all
@@ -55,6 +56,28 @@ class LichessesController < ApplicationController
       format.html { redirect_to lichesses_url, notice: "Lichess was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+
+  helper_method :get_http_request
+
+  def get_http_request(username)
+    uri = URI('https://lichess.org/api/user/' + username)
+    # blitz, rapids, total
+    stats = [0, 0, 0]
+    #username = 'alireza2003'
+    res = Net::HTTP.get_response(uri)
+    #Net::http.request_get(url + username) {|res|
+    full_data = JSON.parse(res.body)
+
+    #puts full_data["perfs"]["blitz"]["rating"]
+    #puts full_data["perfs"]["rapid"]["rating"]
+    #puts full_data["count"]["all"]
+    stats <<  full_data["perfs"]["blitz"]["rating"]
+    stats <<  full_data["perfs"]["rapid"]["rating"]
+    stats <<  full_data["count"]["all"]
+    puts stats
+    return stats
   end
 
   private
