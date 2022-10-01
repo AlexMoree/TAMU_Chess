@@ -3,19 +3,22 @@
 <h1>Qr Codes</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Event</th>
-      <th>Attendence link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <tbody>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Qr Code Link</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  </tbody>
 
   <tbody>
     <% @qr_codes.each do |qr_code| %>
       <tr>
-        <td><%= qr_code.event_id %></td>
-        <td><%= qr_code.attendence_link %></td>
+        <td><%= qr_code.title %></td>
+        <td><%= qr_code.qr_url %></td>
+
         <td><%= link_to 'Show', qr_code %></td>
         <td><%= link_to 'Edit', edit_qr_code_path(qr_code) %></td>
         <td><%= link_to 'Destroy', qr_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
