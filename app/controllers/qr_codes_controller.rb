@@ -65,6 +65,6 @@ class QrCodesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def qr_code_params
-      params.require(:qr_code).permit(:event_id, :attendence_link, :signup_link)
+      params.require(:qr_code).permit(:title, :qr_url)
     end
 end
