@@ -17,8 +17,9 @@
     <% @qr_codes.each do |qr_code| %>
       <tr>
         <td><%= qr_code.title %></td>
-        <td><%= qr_code.qr_url %></td>
-
+        <td>
+        <%= link_to qr_code.qr_url, qr_code.qr_url, :target => "_blank" %>
+        </td>
         <td><%= link_to 'Show', qr_code %></td>
         <td><%= link_to 'Edit', edit_qr_code_path(qr_code) %></td>
         <td><%= link_to 'Destroy', qr_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
