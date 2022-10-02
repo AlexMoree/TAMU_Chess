@@ -15,7 +15,6 @@
 
   <tbody>
     <% @chesses.each do |chess| %>
-      <!-- would go here -->
       <tr>
         <td><%= chess.chess_com_username %></td>
         <td><%= chess.blitz %></td>
@@ -28,16 +27,6 @@
     <% end %>
   </tbody>
 </table>
-
-<!-- Idea of Code
-<% @personal_informations.each do |personal_information| %>
-<%= chess.chess_com_username = personal_information.chess_com_username %>
-<% count = get_http_request_chess(chess.chess_com_username) %>
-<%= chess.blitz  = count[0]%>
-<%= chess.rapid = count[1]%>
-<%= chess.total_played = count[2]%>
-<% end %> 
--->
 
 <br>
 <br>

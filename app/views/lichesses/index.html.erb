@@ -15,7 +15,6 @@
 
   <tbody>
     <% @lichesses.each do |lichess| %>
-    <!-- would go here -->
       <tr>
         <td><%= lichess.lichess_org_username %></td>
         <td><%= lichess.blitz %></td>
@@ -28,18 +27,6 @@
     <% end %>
   </tbody>
 </table>
-<!--
-<% count = get_http_request_lichess('alireza2003') %>
--->
-<!-- Idea of Code
-<% @personal_informations.each do |personal_information| %>
-<%= lichess.lichess_org_username = personal_information.lichess_org_username %>
-<% count = get_http_request_lichess(lichess.lichess_org_username) %>
-<%= lichess.blitz  = count[0]%>
-<%= lichess.rapid = count[1]%>
-<%= lichess.total_played = count[2]%>
-<% end %> 
--->
 <br>
 <br>
 <%= link_to 'Update', lichesses_path %>
