@@ -18,7 +18,7 @@
       <tr>
         <td><%= qr_code.title %></td>
         <td>
-        <%= link_to qr_code.qr_url, qr_code.qr_url, :target => "_blank" %>
+        <%= link_to "Qr Code Link", qr_code.qr_url, :target => "_blank" %>
         </td>
         <td><%= link_to 'Show', qr_code %></td>
         <td><%= link_to 'Edit', edit_qr_code_path(qr_code) %></td>
