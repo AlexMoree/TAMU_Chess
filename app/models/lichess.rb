@@ -1,3 +1,5 @@
 class Lichess < ApplicationRecord
-    validates :lichess_com_username, :blitz, :rapid, :total_played, presence: true
+    belongs_to :personal_information, :optional => true
+    
+    validates :lichess_org_username, :blitz, :rapid, :total_played, presence: true
 end
