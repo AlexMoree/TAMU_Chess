@@ -38,7 +38,8 @@ jobs:
         with:
           cmd: install
       - name: Run tests
-        run: bundler exec rspec .
+        run: bundler exec rspec spec/feature/integration_spec.rb
+        run: bundler exec rspec spec/unit/unit_spec.rb
       - name: Run brakeman
         run: brakeman -o brakeman.txt
       - name: Run rubocop
