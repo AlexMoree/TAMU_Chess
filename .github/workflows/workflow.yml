@@ -37,8 +37,9 @@ jobs:
       - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: install
-      - name: Run tests
+      - name: Run test1
         run: bundler exec rspec spec/feature/integration_spec.rb
+      - name: Run test2  
         run: bundler exec rspec spec/unit/unit_spec.rb
       - name: Run brakeman
         run: brakeman -o brakeman.txt
