@@ -1,9 +1,9 @@
 # location: spec/unit/unit_spec.rb
 require 'rails_helper'
 
-RSpec.describe(Personal, type: :model) do
+RSpec.describe(personal_information, type: :model) do
   subject do
-    described_class.new(student: '8107358989')
+    described_class.new(Uin: '111111111')
   end
 
   it 'is valid with valid attributes' do
