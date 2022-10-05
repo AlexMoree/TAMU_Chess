@@ -57,6 +57,15 @@ class PersonalInformationsController < ApplicationController
     end
   end
 
+  def getSemesterStart
+    # use instance variable to communicate with V
+  end
+
+  def getSemesterEnd
+    # use instance variable to communicate with V
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_personal_information
