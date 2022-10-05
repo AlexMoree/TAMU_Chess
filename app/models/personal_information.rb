@@ -4,5 +4,5 @@ class PersonalInformation < ApplicationRecord
 
     belongs_to :attendence, :optional => true
 
-    validates :uin, :first_name, :last_name, :email, :membership, :start_date, :end_date, :discord_username, :chess_com_username, :lichess_org_username, presence: true
+    validates :uin, :first_name, :last_name, :email, :start_date, :end_date, presence: true
 end

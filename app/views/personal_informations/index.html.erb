@@ -33,7 +33,6 @@
         <td><%= personal_information.chess_com_username %></td>
         <td><%= personal_information.lichess_org_username %></td>
 
-        <td><%= link_to 'Show', personal_information %></td>
         <td><%= link_to 'Edit', edit_personal_information_path(personal_information) %></td>
         <td><%= link_to 'Destroy', personal_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -41,6 +40,9 @@
   </tbody>
 </table>
 
+<br>
+<br>
+<%= link_to 'New', new_personal_information_path %>
 <br>
 <br>
 <%= link_to 'Back', homes_path %>

@@ -38,17 +38,17 @@
 
   <div class="field">
     <%= form.label :membership %>
-    <%= form.text_field :membership %>
+    <%= form.check_box :membership %>
   </div>  
 
   <div class="field">
     <%= form.label :start_date %>
-    <%= form.text_field :start_date %>
+    <%= form.date_field :start_date, :value => '2022-08-24' %>
   </div>  
 
   <div class="field">
     <%= form.label :end_date %>
-    <%= form.text_field :end_date %>
+    <%= form.date_field :end_date, :value => '2022-12-15' %>
   </div>  
 
   <div class="field">
