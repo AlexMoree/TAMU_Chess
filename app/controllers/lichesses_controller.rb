@@ -80,18 +80,51 @@ class LichessesController < ApplicationController
     return stats
   end
 
-  def update_lichesses_table()
+  def update_lichesses_table
 
-    #get list of usernames
-    #select * from lichess table where start date is ??
+    #get current semester start date
 
-    #clear table
+    puts "REACHED FUNCTION"
+    t = Time.now
 
-    #loop through list of usernames
+    currentYear = t.year
+    currentMonth = t.month
 
-      #do api call get data
-      #add row
+    if currentMonth < 8 
+      xMonth = 1
+    else 
+      xMonth = 8
+    end
+    
+    xDate = Time.new(currentYear, xMonth, 01)
+    puts xDate
 
+    personal_informations = PersonalInformation.where(start_date:xDate).lichess_org_username.exists
+    lichesses = Lichess.all
+
+    #destroy all existing rows
+    lichesses.each{ |lichess|
+      lichess.destroy
+    }
+
+    #loop through usernames
+    personal_informations.each{ |personal_information|
+
+      currentUsername = personal_information.lichess_org_username
+
+      # blitz, rapid, count
+      currentStats = get_http_request_lichess(currentUsername)
+
+      #create new row
+      @lichess = Lichess.new(lichess_params)
+      @lichess.lichess_org_username = currentUsername
+      @lichess.blitz = currentStats[0]
+      @lichess.rapid = currentStats[1]
+      @lichess.total_played = currentStats[2]
+      @lichess.save
+    
+    }
+    
   end
 
   private
@@ -102,6 +135,7 @@ class LichessesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lichess_params
-      params.require(:lichess).permit(:lichess_org_username, :blitz, :rapid, :total_played)
+      params.permit(:lichess, :lichess_org_username, :blitz, :rapid, :total_played)
+      #params.require(:lichess).permit(:lichess_org_username, :blitz, :rapid, :total_played)
     end
 end
