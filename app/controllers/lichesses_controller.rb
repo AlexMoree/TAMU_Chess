@@ -126,7 +126,6 @@ class LichessesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lichess_params
-      params.permit(:lichess, :lichess_org_username, :blitz, :rapid, :total_played)
-      #params.require(:lichess).permit(:lichess_org_username, :blitz, :rapid, :total_played)
+      params.require(:lichess).permit(:lichess_org_username, :blitz, :rapid, :total_played)
     end
 end
