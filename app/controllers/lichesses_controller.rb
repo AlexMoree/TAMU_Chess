@@ -101,19 +101,18 @@ class LichessesController < ApplicationController
 
     #loop through usernames
     personal_informations.each do |personal_information|
+      if personal_information.lichess_org_username != ""
+        currentUsername = personal_information.lichess_org_username
+        currentStats = get_http_request_lichess(currentUsername)
 
-      currentUsername = personal_information.lichess_org_username
-
-      # blitz, rapid, count
-      currentStats = get_http_request_lichess(currentUsername)
-
-      #create new row
-      lichess = Lichess.new
-      lichess.lichess_org_username = currentUsername
-      lichess.blitz = currentStats[0]
-      lichess.rapid = currentStats[1]
-      lichess.total_played = currentStats[2]
-      lichess.save
+        #create new row
+        lichess = Lichess.new
+        lichess.lichess_org_username = currentUsername
+        lichess.blitz = currentStats[0]
+        lichess.rapid = currentStats[1]
+        lichess.total_played = currentStats[2]
+        lichess.save
+      end
     end
   end
   helper_method :update_lichesses_table

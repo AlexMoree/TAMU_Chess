@@ -14,6 +14,7 @@
   </thead>
 
   <tbody>
+    <% update_chesses_table %>
     <% @chesses.each do |chess| %>
       <tr>
         <td><%= chess.chess_com_username %></td>
@@ -31,7 +32,6 @@
 <br>
 <br>
 <%= link_to 'Update', chesses_path %>
-<!-- this refreshed the page -->
 <br>
 <br>
 <%= link_to 'Back', homes_path %>

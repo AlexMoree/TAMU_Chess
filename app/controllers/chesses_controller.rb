@@ -94,8 +94,44 @@ class ChessesController < ApplicationController
 
     puts stats
     return stats
-
   end
+
+  def update_chesses_table
+    t = Time.now
+    x = t.strftime('%Y')
+    y = t.mon
+
+    if y < 8 
+      x = x + '-01-01'
+    else 
+      x = x + '-08-01'
+    end
+    
+    personal_informations = PersonalInformation.where(start_date:x)
+    lichesses = Chess.all
+
+    #destroy all existing rows
+    chesses.each do |chess| 
+      chess.destroy
+    end
+
+    #loop through usernames
+    personal_informations.each do |personal_information|
+      if personal_information.chess_com_username != ""
+        currentUsername = personal_information.chess_com_username
+        currentStats = get_http_request_chess(currentUsername)
+
+        #create new row
+        chess = Chess.new
+        chess.lichess_org_username = currentUsername
+        chess.blitz = currentStats[0]
+        chess.rapid = currentStats[1]
+        chess.total_played = currentStats[2]
+        chess.save
+      end
+    end
+  end
+  helper_method :update_chesses_table
 
   private
     # Use callbacks to share common setup or constraints between actions.
