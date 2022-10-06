@@ -80,6 +80,20 @@ class LichessesController < ApplicationController
     return stats
   end
 
+  def update_lichesses_table()
+
+    #get list of usernames
+    #select * from lichess table where start date is ??
+
+    #clear table
+
+    #loop through list of usernames
+
+      #do api call get data
+      #add row
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lichess
