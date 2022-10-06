@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :chess_com_username %>
-    <%= form.text_field :chess_com_username %>
+    <%= form.select :uin, PersonalInformation.order(:chess_com_username).map { |x| [x.chess_com_username, x.first_name] }, include_blank: true, id: "id_of_the_chess_com_username_select_box" %>
   </div>
 
   <div class="field">

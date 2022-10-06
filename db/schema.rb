@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_09_30_030934) do
   end
 
   create_table "chesses", force: :cascade do |t|
+    t.string "uin"
     t.string "chess_com_username"
     t.integer "blitz"
     t.integer "rapid"
