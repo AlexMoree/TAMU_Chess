@@ -81,34 +81,26 @@ class LichessesController < ApplicationController
   end
 
   def update_lichesses_table
-
-    #get current semester start date
-
-    puts "REACHED FUNCTION"
     t = Time.now
+    x = t.strftime('%Y')
+    y = t.mon
 
-    currentYear = t.year
-    currentMonth = t.month
-
-    if currentMonth < 8 
-      xMonth = 1
+    if y < 8 
+      x = x + '-01-01'
     else 
-      xMonth = 8
+      x = x + '-08-01'
     end
     
-    xDate = Time.new(currentYear, xMonth, 01)
-    puts xDate
-
-    personal_informations = PersonalInformation.where(start_date:xDate).lichess_org_username.exists
+    personal_informations = PersonalInformation.where(start_date:x)
     lichesses = Lichess.all
 
     #destroy all existing rows
-    lichesses.each{ |lichess|
+    lichesses.each do |lichess| 
       lichess.destroy
-    }
+    end
 
     #loop through usernames
-    personal_informations.each{ |personal_information|
+    personal_informations.each do |personal_information|
 
       currentUsername = personal_information.lichess_org_username
 
@@ -116,16 +108,15 @@ class LichessesController < ApplicationController
       currentStats = get_http_request_lichess(currentUsername)
 
       #create new row
-      @lichess = Lichess.new(lichess_params)
-      @lichess.lichess_org_username = currentUsername
-      @lichess.blitz = currentStats[0]
-      @lichess.rapid = currentStats[1]
-      @lichess.total_played = currentStats[2]
-      @lichess.save
-    
-    }
-    
+      lichess = Lichess.new
+      lichess.lichess_org_username = currentUsername
+      lichess.blitz = currentStats[0]
+      lichess.rapid = currentStats[1]
+      lichess.total_played = currentStats[2]
+      lichess.save
+    end
   end
+  helper_method :update_lichesses_table
 
   private
     # Use callbacks to share common setup or constraints between actions.
