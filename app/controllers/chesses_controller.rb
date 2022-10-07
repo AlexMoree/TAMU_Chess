@@ -63,7 +63,9 @@ class ChessesController < ApplicationController
   helper_method :get_http_request_chess
 
   def get_http_request_chess(username)
-    uri = URI('https://api.chess.com/pub/player/' + username + '/stats')
+
+    lower_case_username = username.downcase
+    uri = URI('https://api.chess.com/pub/player/' + lower_case_username + '/stats')
     # uri = URI('https://api.chess.com/pub/player/AnaKuchava/stats')
     # blitz, rapids, total
     stats = []
@@ -72,7 +74,7 @@ class ChessesController < ApplicationController
     #Net::http.request_get(url + username) {|res|
     full_data = JSON.parse(res.body)
 
-    # puts full_data
+    puts full_data
 
     # puts full_data["chess_blitz"]["last"]["rating"]
     # puts full_data["chess_rapid"]["last"]["rating"]
@@ -124,7 +126,7 @@ class ChessesController < ApplicationController
 
         #create new row
         chess = Chess.new
-        chess.lichess_org_username = currentUsername
+        chess.chess_com_username = currentUsername
         chess.blitz = currentStats[0]
         chess.rapid = currentStats[1]
         chess.total_played = currentStats[2]
