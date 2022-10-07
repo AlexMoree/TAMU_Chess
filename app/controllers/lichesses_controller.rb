@@ -69,6 +69,8 @@ class LichessesController < ApplicationController
     res = Net::HTTP.get_response(uri)
     #Net::http.request_get(url + username) {|res|
     full_data = JSON.parse(res.body)
+    puts username
+    puts full_data
 
     #puts full_data["perfs"]["blitz"]["rating"]
     #puts full_data["perfs"]["rapid"]["rating"]
