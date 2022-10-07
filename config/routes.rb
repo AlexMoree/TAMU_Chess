@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :homes
   resources :logins
+
+  get 'login', to 'logins#new'
+  post 'login', to 'logins#show'
+  
   resources :lichesses
   resources :qr_codes
   resources :attendences
