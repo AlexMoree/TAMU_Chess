@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Username</th>
       <th>Blitz</th>
       <th>Rapid</th>
@@ -17,6 +18,7 @@
     <% update_chesses_table %>
     <% @chesses.each do |chess| %>
       <tr>
+        <td><%= chess.actual_name %></td>
         <td><%= chess.chess_com_username %></td>
         <td><%= chess.blitz %></td>
         <td><%= chess.rapid %></td>

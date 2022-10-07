@@ -103,11 +103,13 @@ class LichessesController < ApplicationController
     personal_informations.each do |personal_information|
       if personal_information.lichess_org_username != ""
         currentUsername = personal_information.lichess_org_username
+        actualName = personal_information.first_name + " " + personal_information.last_name
         
         currentStats = get_http_request_lichess(currentUsername)
 
         #create new row
         lichess = Lichess.new
+        lichess.actual_name = actualName
         lichess.lichess_org_username = currentUsername
         lichess.blitz = currentStats[0]
         lichess.rapid = currentStats[1]
@@ -126,6 +128,6 @@ class LichessesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lichess_params
-      params.require(:lichess).permit(:lichess_org_username, :blitz, :rapid, :total_played)
+      params.require(:lichess).permit(:actual_name, :lichess_org_username, :blitz, :rapid, :total_played)
     end
 end

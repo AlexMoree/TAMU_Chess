@@ -121,11 +121,13 @@ class ChessesController < ApplicationController
     personal_informations.each do |personal_information|
       if personal_information.chess_com_username != ""
         currentUsername = personal_information.chess_com_username
-        
+        actualName = personal_information.first_name + " " + personal_information.last_name
+
         currentStats = get_http_request_chess(currentUsername)
 
         #create new row
         chess = Chess.new
+        chess.actual_name = actualName
         chess.chess_com_username = currentUsername
         chess.blitz = currentStats[0]
         chess.rapid = currentStats[1]
@@ -144,6 +146,6 @@ class ChessesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def chess_params
-      params.require(:chess).permit(:chess_com_username, :blitz, :rapid, :total_played)
+      params.require(:chess).permit(:actual_name, :chess_com_username, :blitz, :rapid, :total_played)
     end
 end

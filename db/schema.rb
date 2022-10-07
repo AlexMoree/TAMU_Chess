@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_09_30_030934) do
   end
 
   create_table "chesses", force: :cascade do |t|
+    t.string "actual_name"
     t.string "chess_com_username"
     t.integer "blitz"
     t.integer "rapid"
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_09_30_030934) do
   end
 
   create_table "lichesses", force: :cascade do |t|
+    t.string "actual_name"
     t.string "lichess_org_username"
     t.integer "blitz"
     t.integer "rapid"
