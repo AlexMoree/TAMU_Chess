@@ -72,6 +72,17 @@ class LichessesController < ApplicationController
     puts username
     puts full_data
 
+    begin
+      if full_data["error"] == "Not found"
+        puts "username does not exist"
+        return [-1, -1, -1]
+      else
+        puts "username exists no exception on array"
+      end
+    rescue
+      puts "username exists threw exception on array"
+    end
+
     #puts full_data["perfs"]["blitz"]["rating"]
     #puts full_data["perfs"]["rapid"]["rating"]
     #puts full_data["count"]["all"]
@@ -108,7 +119,10 @@ class LichessesController < ApplicationController
         actualName = personal_information.first_name + " " + personal_information.last_name
         
         currentStats = get_http_request_lichess(currentUsername)
-
+        if currentStats[0] == -1
+          puts "username skipped"
+          next
+        end
         #create new row
         lichess = Lichess.new
         lichess.actual_name = actualName
@@ -117,6 +131,7 @@ class LichessesController < ApplicationController
         lichess.rapid = currentStats[1]
         lichess.total_played = currentStats[2]
         lichess.save
+        puts "row created"
       end
     end
   end
