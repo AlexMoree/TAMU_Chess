@@ -108,7 +108,7 @@ class ChessesController < ApplicationController
     end
     
     personal_informations = PersonalInformation.where(start_date:x)
-    lichesses = Chess.all
+    chesses = Chess.all
 
     #destroy all existing rows
     chesses.each do |chess| 
@@ -119,6 +119,7 @@ class ChessesController < ApplicationController
     personal_informations.each do |personal_information|
       if personal_information.chess_com_username != ""
         currentUsername = personal_information.chess_com_username
+        
         currentStats = get_http_request_chess(currentUsername)
 
         #create new row

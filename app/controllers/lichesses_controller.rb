@@ -103,6 +103,7 @@ class LichessesController < ApplicationController
     personal_informations.each do |personal_information|
       if personal_information.lichess_org_username != ""
         currentUsername = personal_information.lichess_org_username
+        
         currentStats = get_http_request_lichess(currentUsername)
 
         #create new row
