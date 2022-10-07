@@ -70,11 +70,25 @@ class ChessesController < ApplicationController
     # blitz, rapids, total
     stats = []
 
+    # try catch api call, if errors make stats an empty array
+    
     res = Net::HTTP.get_response(uri)
+
     #Net::http.request_get(url + username) {|res|
     full_data = JSON.parse(res.body)
-
+    puts username
     puts full_data
+
+    begin
+      if full_data["code"] == 0
+        puts "username does not exist"
+        return [-1, -1, -1]
+      else
+        puts "username exists no exception on array"
+      end
+    rescue
+      puts "username exists threw exception on array"
+    end
 
     # puts full_data["chess_blitz"]["last"]["rating"]
     # puts full_data["chess_rapid"]["last"]["rating"]
@@ -123,7 +137,11 @@ class ChessesController < ApplicationController
         currentUsername = personal_information.chess_com_username
         
         currentStats = get_http_request_chess(currentUsername)
-
+        ##if returns blank, username errored
+        if currentStats[0] == -1
+          puts "username skipped"
+          next
+        end
         #create new row
         chess = Chess.new
         chess.chess_com_username = currentUsername
@@ -131,6 +149,7 @@ class ChessesController < ApplicationController
         chess.rapid = currentStats[1]
         chess.total_played = currentStats[2]
         chess.save
+        puts "row created"
       end
     end
   end
