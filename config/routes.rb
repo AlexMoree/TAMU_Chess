@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   resources :homes
   resources :logins
-
-  get 'login', to 'logins#new'
-  post 'login', to 'logins#show'
-  
+  resources :users, only:[:new, :create]
   resources :lichesses
   resources :qr_codes
   resources :attendences
   resources :chesses
   resources :personal_informations
+
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/sessions', to: 'sessions#create', as: 'sessions'
+  delete '/sessions', to: 'sessions#destroy'
 
   root 'logins#index'
 

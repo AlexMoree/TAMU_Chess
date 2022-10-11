@@ -6,17 +6,21 @@ class LoginsController < ApplicationController
     @logins = Login.all
   end
 
-  # GET /logins/1 or /logins/1.json
-  def show
+  def store
+    @logins = Login.show
+  end
+
+  def authorize
+    @logins = Login.show
+    @chesses = chesses.show
+    @homes = homes.show
+    @attendences = attendences.show
+    
   end
 
   # GET /logins/new
   def new
     @login = Login.new
-  end
-
-  # GET /logins/1/edit
-  def edit
   end
 
   # POST /logins or /logins.json
@@ -44,16 +48,6 @@ class LoginsController < ApplicationController
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @login.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /logins/1 or /logins/1.json
-  def destroy
-    @login.destroy
-
-    respond_to do |format|
-      format.html { redirect_to logins_url, notice: "Login was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
