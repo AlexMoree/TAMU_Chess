@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Username</th>
       <th>Blitz</th>
       <th>Rapid</th>
@@ -14,8 +15,10 @@
   </thead>
 
   <tbody>
+    <% update_lichesses_table %>
     <% @lichesses.each do |lichess| %>
       <tr>
+        <td><%= lichess.actual_name %></td>
         <td><%= lichess.lichess_org_username %></td>
         <td><%= lichess.blitz %></td>
         <td><%= lichess.rapid %></td>
@@ -29,7 +32,7 @@
 </table>
 <br>
 <br>
-<%= link_to 'Update', lichesses_path %>
+<%= link_to 'Update', lichesses_path %> 
 <br>
 <br>
 <%= link_to 'Back', homes_path %>

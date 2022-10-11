@@ -69,6 +69,19 @@ class LichessesController < ApplicationController
     res = Net::HTTP.get_response(uri)
     #Net::http.request_get(url + username) {|res|
     full_data = JSON.parse(res.body)
+    puts username
+    puts full_data
+
+    begin
+      if full_data["error"] == "Not found"
+        puts "username does not exist"
+        return [-1, -1, -1]
+      else
+        puts "username exists no exception on array"
+      end
+    rescue
+      puts "username exists threw exception on array"
+    end
 
     #puts full_data["perfs"]["blitz"]["rating"]
     #puts full_data["perfs"]["rapid"]["rating"]
@@ -80,6 +93,50 @@ class LichessesController < ApplicationController
     return stats
   end
 
+  def update_lichesses_table
+    t = Time.now
+    x = t.strftime('%Y')
+    y = t.mon
+
+    if y < 8 
+      x = x + '-01-01'
+    else 
+      x = x + '-08-01'
+    end
+    
+    personal_informations = PersonalInformation.where(start_date:x)
+    lichesses = Lichess.all
+
+    #destroy all existing rows
+    lichesses.each do |lichess| 
+      lichess.destroy
+    end
+
+    #loop through usernames
+    personal_informations.each do |personal_information|
+      if personal_information.lichess_org_username != ""
+        currentUsername = personal_information.lichess_org_username
+        actualName = personal_information.first_name + " " + personal_information.last_name
+        
+        currentStats = get_http_request_lichess(currentUsername)
+        if currentStats[0] == -1
+          puts "username skipped"
+          next
+        end
+        #create new row
+        lichess = Lichess.new
+        lichess.actual_name = actualName
+        lichess.lichess_org_username = currentUsername
+        lichess.blitz = currentStats[0]
+        lichess.rapid = currentStats[1]
+        lichess.total_played = currentStats[2]
+        lichess.save
+        puts "row created"
+      end
+    end
+  end
+  helper_method :update_lichesses_table
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lichess
@@ -88,6 +145,6 @@ class LichessesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lichess_params
-      params.require(:lichess).permit(:lichess_org_username, :blitz, :rapid, :total_played)
+      params.require(:lichess).permit(:actual_name, :lichess_org_username, :blitz, :rapid, :total_played)
     end
 end
