@@ -62,7 +62,13 @@ class LichessesController < ApplicationController
   helper_method :get_http_request_lichess
 
   def get_http_request_lichess(username)
-    uri = URI('https://lichess.org/api/user/' + username)
+
+    begin
+      uri = URI('https://lichess.org/api/user/' + username)
+    rescue
+      puts "URI exception"
+      return [-1, -1, -1]
+    end
     # blitz, rapids, total
     stats = []
     #username = 'alireza2003'

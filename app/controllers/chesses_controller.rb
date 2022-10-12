@@ -65,9 +65,15 @@ class ChessesController < ApplicationController
   def get_http_request_chess(username)
 
     lower_case_username = username.downcase
-    uri = URI('https://api.chess.com/pub/player/' + lower_case_username + '/stats')
-    # uri = URI('https://api.chess.com/pub/player/AnaKuchava/stats')
-    # blitz, rapids, total
+
+    begin
+      uri = URI('https://api.chess.com/pub/player/' + lower_case_username + '/stats')
+      # uri = URI('https://api.chess.com/pub/player/AnaKuchava/stats')
+      # blitz, rapids, total
+    rescue
+      puts "URI exception"
+      return [-1, -1, -1]
+    end
     stats = []
 
     # try catch api call, if errors make stats an empty array
