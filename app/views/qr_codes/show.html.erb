@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Event ID:</strong>
-  <%= @qr_code.event_id %>
+  <strong>Title</strong>
+  <%= @qr_code.title %>
 </p>
 
 <p>
-  <strong>Attendence link:</strong>
-  <%= @qr_code.attendence_link %>
+  <strong>Qr Code Link</strong>
+  <%= @qr_code.qr_url %>
 </p>
 
 <%= link_to 'Edit', edit_qr_code_path(@qr_code) %> |

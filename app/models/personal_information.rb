@@ -1,5 +1,8 @@
 class PersonalInformation < ApplicationRecord
-    has_many :payment_statuses
+    has_many :chesses
+    has_many :lichesses
 
-    validates :student_id, :first_name, :last_name, :date_of_birth, :classification, :major, presence: true
+    belongs_to :attendence, :optional => true
+
+    validates :uin, :first_name, :last_name, :email, :start_date, :end_date, presence: true
 end

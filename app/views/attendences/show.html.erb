@@ -1,24 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Thank you for submitting your attendance</h1>
+
 <p>
-  <strong>Event:</strong>
-  <%= @attendence.event_id %>
+  <strong>Student UIN:</strong>
+  <%= @attendence.uin %>
 </p>
 
 <p>
-  <strong>Event name:</strong>
-  <%= @attendence.event_name %>
+  <strong>Event Day:</strong>
+  <%= @attendence.day_of_event %>
 </p>
 
-<p>
-  <strong>Event date:</strong>
-  <%= @attendence.event_date %>
-</p>
-
-<p>
-  <strong>Attendence:</strong>
-  <%= @attendence.attendence %>
-</p>
 
 <%= link_to 'Edit', edit_attendence_path(@attendence) %> |
-<%= link_to 'Back', attendences_path %>

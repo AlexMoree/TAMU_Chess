@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :event_id %>
-    <%= form.number_field :event_id %>
-  </div><%= link_to 'Back', qr_codes_path %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
 
   <div class="field">
-    <%= form.label :attendence_link %>
-    <%= form.text_field :attendence_link %>
+    <%= form.label :qr_url %>
+    <%= form.text_field :qr_url %>
   </div>
 
   <div class="actions">

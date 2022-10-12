@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chess com username:</strong>
+  <%= @chess.chess_com_username %>
+</p>
+
+<p>
+  <strong>Blitz:</strong>
+  <%= @chess.blitz %>
+</p>
+
+<p>
+  <strong>Rapid:</strong>
+  <%= @chess.rapid %>
+</p>
+
+<p>
+  <strong>Total played:</strong>
+  <%= @chess.total_played %>
+</p>
+
+<%= link_to 'Edit', edit_chess_path(@chess) %> |
+<%= link_to 'Back', chesses_path %>

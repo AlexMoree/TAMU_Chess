@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Attendences</h1>
+<h1>Attendances</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Event</th>
-      <th>Event name</th>
-      <th>Event date</th>
-      <th>Attendence</th>
+      <th>Student UIN</th>
+      <th>Date of Attendance</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +14,8 @@
   <tbody>
     <% @attendences.each do |attendence| %>
       <tr>
-        <td><%= attendence.event_id %></td>
-        <td><%= attendence.event_name %></td>
-        <td><%= attendence.event_date %></td>
-        <td><%= attendence.attendence %></td>
+        <td><%= attendence.uin %></td>
+        <td><%= attendence.day_of_event %></td>
         <td><%= link_to 'Show', attendence %></td>
         <td><%= link_to 'Edit', edit_attendence_path(attendence) %></td>
         <td><%= link_to 'Destroy', attendence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,9 +25,5 @@
 </table>
 
 <br>
-
-<%= link_to 'New Attendence', new_attendence_path %>
-
 <br>
-
-<%= link_to 'Back', personal_informations_path %>
+<%= link_to 'Back', homes_path %>

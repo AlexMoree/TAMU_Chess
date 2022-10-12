@@ -1,0 +1,37 @@
+<%= form_with(model: chess) do |form| %>
+  <% if chess.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(chess.errors.count, "error") %> prohibited this chess from being saved:</h2>
+
+      <ul>
+        <% chess.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :chess_com_username %>
+    <%= form.select :uin, PersonalInformation.order(:chess_com_username).map { |x| [x.chess_com_username, x.first_name] }, include_blank: true, id: "id_of_the_chess_com_username_select_box" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :blitz %>
+    <%= form.number_field :blitz %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rapid %>
+    <%= form.number_field :rapid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_played %>
+    <%= form.number_field :total_played %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

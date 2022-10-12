@@ -1,100 +1,132 @@
 {
   "RSpec": {
     "coverage": {
-      "/csce431/spec/feature/integration_spec.rb": {
+      "/csce431/csce431/chess_app/spec/feature/integration_spec.rb": {
         "lines": [
           null,
           1,
           null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/csce431/csce431/chess_app/spec/rails_helper.rb": {
+        "lines": [
+          null,
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
           0,
+          null,
           0,
+          null,
+          null,
+          null,
+          null,
           0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          null,
+          null,
           0,
           null,
           null,
           null
         ]
       },
-      "/csce431/spec/rails_helper.rb": {
-        "lines": [
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          0,
-          0,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/csce431/config/environment.rb": {
+      "/csce431/csce431/chess_app/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -103,7 +135,7 @@
           1
         ]
       },
-      "/csce431/config/application.rb": {
+      "/csce431/csce431/chess_app/config/application.rb": {
         "lines": [
           1,
           null,
@@ -129,7 +161,7 @@
           null
         ]
       },
-      "/csce431/config/boot.rb": {
+      "/csce431/csce431/chess_app/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -137,7 +169,7 @@
           1
         ]
       },
-      "/csce431/config/environments/test.rb": {
+      "/csce431/csce431/chess_app/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -201,7 +233,7 @@
           null
         ]
       },
-      "/csce431/config/initializers/application_controller_renderer.rb": {
+      "/csce431/csce431/chess_app/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -213,7 +245,7 @@
           null
         ]
       },
-      "/csce431/config/initializers/assets.rb": {
+      "/csce431/csce431/chess_app/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -231,7 +263,7 @@
           null
         ]
       },
-      "/csce431/config/initializers/backtrace_silencers.rb": {
+      "/csce431/csce431/chess_app/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -243,7 +275,7 @@
           1
         ]
       },
-      "/csce431/config/initializers/content_security_policy.rb": {
+      "/csce431/csce431/chess_app/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -277,7 +309,7 @@
           null
         ]
       },
-      "/csce431/config/initializers/cookies_serializer.rb": {
+      "/csce431/csce431/chess_app/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -286,7 +318,7 @@
           1
         ]
       },
-      "/csce431/config/initializers/filter_parameter_logging.rb": {
+      "/csce431/csce431/chess_app/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -296,7 +328,7 @@
           null
         ]
       },
-      "/csce431/config/initializers/inflections.rb": {
+      "/csce431/csce431/chess_app/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -316,7 +348,7 @@
           null
         ]
       },
-      "/csce431/config/initializers/mime_types.rb": {
+      "/csce431/csce431/chess_app/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -324,7 +356,7 @@
           null
         ]
       },
-      "/csce431/config/initializers/permissions_policy.rb": {
+      "/csce431/csce431/chess_app/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -339,7 +371,7 @@
           null
         ]
       },
-      "/csce431/config/initializers/wrap_parameters.rb": {
+      "/csce431/csce431/chess_app/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -357,8 +389,10 @@
           null
         ]
       },
-      "/csce431/config/routes.rb": {
+      "/csce431/csce431/chess_app/config/routes.rb": {
         "lines": [
+          1,
+          1,
           1,
           1,
           1,
@@ -372,139 +406,61 @@
           null
         ]
       },
-      "/csce431/app/helpers/application_helper.rb": {
+      "/csce431/csce431/chess_app/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/csce431/app/helpers/attendences_helper.rb": {
+      "/csce431/csce431/chess_app/app/helpers/attendences_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/csce431/app/helpers/lichesses_helper.rb": {
+      "/csce431/csce431/chess_app/app/helpers/chesses_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/csce431/app/helpers/payment_statuses_helper.rb": {
+      "/csce431/csce431/chess_app/app/helpers/homes_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/csce431/app/helpers/personal_informations_helper.rb": {
+      "/csce431/csce431/chess_app/app/helpers/lichesses_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/csce431/app/helpers/qr_codes_helper.rb": {
+      "/csce431/csce431/chess_app/app/helpers/logins_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/csce431/app/controllers/personal_informations_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/csce431/app/controllers/application_controller.rb": {
+      "/csce431/csce431/chess_app/app/helpers/payment_statuses_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/csce431/app/models/personal_information.rb": {
+      "/csce431/csce431/chess_app/app/helpers/personal_informations_helper.rb": {
         "lines": [
-          1,
-          1,
-          null,
           1,
           null
         ]
       },
-      "/csce431/app/models/application_record.rb": {
+      "/csce431/csce431/chess_app/app/helpers/qr_codes_helper.rb": {
         "lines": [
-          1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1664152489
+    "timestamp": 1664940556
   }
 }

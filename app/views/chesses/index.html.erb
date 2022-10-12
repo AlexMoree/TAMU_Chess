@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Chess.com</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Blitz</th>
+      <th>Rapid</th>  
+      <th>Total played</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% update_chesses_table %>
+    <% @chesses.each do |chess| %>
+      <tr>
+        <td><%= chess.actual_name %></td>
+        <td><%= chess.chess_com_username %></td>
+        <td><%= chess.blitz %></td>
+        <td><%= chess.rapid %></td>
+        <td><%= chess.total_played %></td>
+        <td><%= link_to 'Show', chess %></td>
+        <td><%= link_to 'Edit', edit_chess_path(chess) %></td>
+        <td><%= link_to 'Destroy', chess, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+<%= link_to 'Update', chesses_path %>
+<br>
+<br>
+<%= link_to 'Back', homes_path %>
