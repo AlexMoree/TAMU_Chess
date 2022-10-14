@@ -1,2 +1,2 @@
-json.extract! personal_information, :id, :Student_id, :created_at, :updated_at
+json.extract! personal_information, :uin, :first_name, :last_name, :email, :membership, :start_date, :end_date, :discord_username, :chess_com_username, :lichess_org_username
 json.url personal_information_url(personal_information, format: :json)
