@@ -27,7 +27,7 @@ This code has been run and tested on:
 
 Download this code repository by using git:
 
- `git clone https://github.com/your_github_here.git`
+ `git clone https://github.com/AlexMoree/TAMU_Chess.git`
 
 
 ## Tests ##
