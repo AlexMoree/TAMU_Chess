@@ -41,8 +41,8 @@ jobs:
         run: bundler exec rspec .
       - name: Run brakeman
         run: brakeman -o brakeman.txt
-          with:
-          fail_on_error: true
+      - uses: reviewdog/action-brakeman@v2
+        with:  
           brakeman_flags: '--no-exit-on-warn --no-exit-on-error'
       - name: Run rubocop
         run: bundler exec rubocop --force-exclusion vendor/*/** --out rubocop.txt
