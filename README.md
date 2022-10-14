@@ -3,7 +3,7 @@
 
 ## Introduction ##
 
-Application Description
+This is an application for Texas A&M University Chess Club. This application provides sign up features for new students, attendance check in, and statistics of students' chess.com or lichess.org blitz and rapid record.
 
 ## Requirements ##
 
@@ -70,5 +70,4 @@ TBD
 
 ## Support ##
 
-Admins looking for support should first look at the application help page.
-Users looking for help seek out assistance from the customer.
+email: alex_moree@tamu.edu
