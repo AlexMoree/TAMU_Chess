@@ -9,7 +9,6 @@ RSpec.describe 'New Personal Information', type: :feature do
     fill_in 'Last name', with: 'Utils'
     fill_in 'Email', with: 'Carson_Utils@tamu.edu'
     fill_in 'Discord username', with: 'Carson#11500'
-    fill_in 'Membership', with: '1'
     fill_in 'Start date', with: '1/1/2022'
     fill_in 'End date', with: '12/1/2022'
     fill_in 'Chess com username', with: 'Carson'
