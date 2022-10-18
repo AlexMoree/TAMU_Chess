@@ -1,6 +1,10 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '930403782664-cljh5k296dgnqqraucc932b5208bffko.apps.googleusercontent.com'
+  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
