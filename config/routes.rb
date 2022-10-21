@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
+  resources :statistics
   resources :homes
-  resources :lichesses
   resources :qr_codes
   resources :attendences
-  resources :chesses
   resources :personal_informations
 
   root 'homes#index'
