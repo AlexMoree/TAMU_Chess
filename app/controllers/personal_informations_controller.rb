@@ -4,6 +4,7 @@ class PersonalInformationsController < ApplicationController
   # GET /personal_informations or /personal_informations.json
   def index
     @personal_informations = PersonalInformation.all
+    @sort = 0
   end
 
   # GET /personal_informations/1 or /personal_informations/1.json
