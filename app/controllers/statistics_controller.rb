@@ -4,6 +4,16 @@ class StatisticsController < ApplicationController
   # GET /statistics or /statistics.json
   def index
     @statistics = Statistic.all
+
+    if params[:sort] == "actual_name" 
+      @statistics = Statistic.order("actual_name")
+    elsif params[:sort] == "chess_username"
+      @statistics = Statistic.order("chess_username")
+    elsif params[:sort] == "lichess_username"
+      @statistics = Statistic.order("lichess_username")
+    elsif params[:sort] != nil
+      @statistics = Statistic.order(params[:sort] + " DESC")
+    end
   end
 
   # GET /statistics/1 or /statistics/1.json

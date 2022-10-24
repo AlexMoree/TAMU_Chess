@@ -20,22 +20,6 @@ ActiveRecord::Schema.define(version: 2022_10_21_165528) do
     t.date "day_of_event"
   end
 
-  create_table "chesses", force: :cascade do |t|
-    t.string "actual_name"
-    t.string "chess_com_username"
-    t.integer "blitz"
-    t.integer "rapid"
-    t.integer "total_played"
-  end
-
-  create_table "lichesses", force: :cascade do |t|
-    t.string "actual_name"
-    t.string "lichess_org_username"
-    t.integer "blitz"
-    t.integer "rapid"
-    t.integer "total_played"
-  end
-
   create_table "personal_informations", force: :cascade do |t|
     t.string "uin"
     t.string "first_name"

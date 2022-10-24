@@ -5,15 +5,15 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Chess.com username</th>
-      <th>Blitz</th>
-      <th>Rapid</th>  
-      <th>Total played</th>
-      <th>Lichess.org username</th>
-      <th>Blitz</th>
-      <th>Rapid</th>  
-      <th>Total played</th>
+      <th><%= link_to "Name", :sort => "actual_name" %></th>
+      <th><%= link_to "Chess.com username", :sort => "chess_username" %></th>
+      <th><%= link_to "Blitz", :sort => "chess_blitz" %></th>
+      <th><%= link_to "Rapid", :sort => "chess_rapid" %></th>  
+      <th><%= link_to "Total played", :sort => "chess_total_played" %></th>
+      <th><%= link_to "Lichess.org username", :sort => "lichess_username" %></th>
+      <th><%= link_to "Blitz", :sort => "lichess_blitz" %></th>
+      <th><%= link_to "Rapid", :sort => "lichess_rapid"%></th>  
+      <th><%= link_to "Total played", :sort => "lichess_total_played" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>

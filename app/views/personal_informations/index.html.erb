@@ -5,31 +5,27 @@
 <!-- checkbox or sth else to manipulate @sort value  -->
 <!-- maybe add <link to> as update does to refresh and reload the entire table with sorted values -->
 
+<%= link_to "Show student with membership only", :paid => "true" %>
+<%= link_to "Show all students", :paid => "false" %>
+
 <table>
   <thead>
     <tr>
-      <th>Student UIN</th>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th><%= link_to "Student UIN", :sort => "uin" %></th>
+      <th><%= link_to "First Name", :sort => "first_name" %></th>
+      <th><%= link_to "Last Name", :sort => "last_name" %></th>
       <th>Email</th>
       <th>Membership</th>
       <th>Start Date</th>
       <th>End Date</th>
-      <th>Discord Username</th>
-      <th>Chess.com Username</th>
-      <th>Lichess.org Username</th>
+      <th><%= link_to "Discord Username", :sort => "discord_username" %></th>
+      <th><%= link_to "Chess.com Username", :sort => "chess_com_username" %></th>
+      <th><%= link_to "Lichess.org Username", :sort => "lichess_org_username" %></th>
       <th colspan="3"></th>
     </tr> 
   </thead>
 
   <tbody>
-    <% if @sort == 0 %>
-      <!-- call sort helper method in controller -->
-    <% elsif @sort == 1 %>
-      <!-- call sort helper method in controller -->
-    <% else %>
-      <!-- call sort helper method in controller -->
-    <% end %>
     <% @personal_informations.each do |personal_information| %>
       <tr>
         <td><%= personal_information.uin %></td>
@@ -49,3 +45,10 @@
     <% end %>
   </tbody>
 </table>
+
+<br>
+<br>
+<%= link_to 'New', new_personal_information_path %>
+<br>
+<br>
+<%= link_to 'Back', homes_path %>
