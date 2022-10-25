@@ -1,6 +1,6 @@
 class AttendencesController < ApplicationController
+  before_action :authenticate_admin!, except: :new
   before_action :set_attendence, only: %i[ show edit update destroy ]
-
   # GET /attendences or /attendences.json
   def index
     @attendences = Attendence.all
