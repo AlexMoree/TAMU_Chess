@@ -10,8 +10,8 @@ class QrCodesController < ApplicationController
   def show
   end
 
-  # GET /qr_codes/new
-  def new
+  # GET /qr_codes/newQR
+  def newQR
     @qr_code = QrCode.new
   end
 
