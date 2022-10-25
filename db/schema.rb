@@ -15,6 +15,16 @@ ActiveRecord::Schema.define(version: 2022_10_21_165528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "admins", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "uid"
+    t.string "avatar_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+  end
+
   create_table "attendences", force: :cascade do |t|
     t.string "uin"
     t.date "day_of_event"
