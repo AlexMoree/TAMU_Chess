@@ -1,5 +1,6 @@
 class PersonalInformationsController < ApplicationController
   before_action :set_personal_information, only: %i[ show edit update destroy ]
+  before_action :authenticate_admin!, except: :new
 
   # GET /personal_informations or /personal_informations.json
   def index

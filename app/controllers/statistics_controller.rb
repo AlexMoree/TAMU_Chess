@@ -1,6 +1,7 @@
 class StatisticsController < ApplicationController
   before_action :set_statistic, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_admin!
+  
   # GET /statistics or /statistics.json
   def index
     @statistics = Statistic.all

@@ -1,6 +1,7 @@
 class QrCodesController < ApplicationController
   before_action :set_qr_code, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_admin!
+  
   # GET /qr_codes or /qr_codes.json
   def index
     @qr_codes = QrCode.all
@@ -10,7 +11,7 @@ class QrCodesController < ApplicationController
   def show
   end
 
-  # GET /qr_codes/newQR
+  # GET /qr_codes/new
   def new
     @qr_code = QrCode.new
   end
