@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
 
   resources :homes
+  resources :statistics
   resources :lichesses
   resources :qr_codes
   resources :attendences

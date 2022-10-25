@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_18_002704) do
+ActiveRecord::Schema.define(version: 2022_10_21_165528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,22 +30,6 @@ ActiveRecord::Schema.define(version: 2022_10_18_002704) do
     t.date "day_of_event"
   end
 
-  create_table "chesses", force: :cascade do |t|
-    t.string "actual_name"
-    t.string "chess_com_username"
-    t.integer "blitz"
-    t.integer "rapid"
-    t.integer "total_played"
-  end
-
-  create_table "lichesses", force: :cascade do |t|
-    t.string "actual_name"
-    t.string "lichess_org_username"
-    t.integer "blitz"
-    t.integer "rapid"
-    t.integer "total_played"
-  end
-
   create_table "personal_informations", force: :cascade do |t|
     t.string "uin"
     t.string "first_name"
@@ -62,6 +46,18 @@ ActiveRecord::Schema.define(version: 2022_10_18_002704) do
   create_table "qr_codes", force: :cascade do |t|
     t.string "title"
     t.string "qr_url"
+  end
+
+  create_table "statistics", force: :cascade do |t|
+    t.string "actual_name"
+    t.string "chess_username"
+    t.integer "chess_blitz"
+    t.integer "chess_rapid"
+    t.integer "chess_total_played"
+    t.string "lichess_username"
+    t.integer "lichess_blitz"
+    t.integer "lichess_rapid"
+    t.integer "lichess_total_played"
   end
 
 end
