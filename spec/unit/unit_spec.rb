@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # location: spec/unit/unit_spec.rb
 require 'rails_helper'
 
@@ -55,7 +57,6 @@ RSpec.describe(QrCode, type: :model) do
     subject.title = nil
     subject.qr_url = nil
     expect(subject).not_to be_valid
-
   end
   it 'is not valid without a title' do
     subject.title = nil
@@ -89,10 +90,10 @@ end
 
 RSpec.describe(PersonalInformation, type: :model) do
   subject do
-    described_class.new(uin: '101111009', first_name: 'Carson',last_name: 'Util',
-    email: 'Carson_Util@tamu.edu',discord_username: 'Carson#11000',membership: '1',
-    start_date: '1/1/2022',end_date: '12/1/2022',
-    chess_com_username: 'Carson100',lichess_org_username: 'Carson100')
+    described_class.new(uin: '101111009', first_name: 'Carson', last_name: 'Util',
+                        email: 'Carson_Util@tamu.edu', discord_username: 'Carson#11000', membership: '1',
+                        start_date: '1/1/2022', end_date: '12/1/2022',
+                        chess_com_username: 'Carson100', lichess_org_username: 'Carson100')
   end
 
   it 'is valid with valid attributes' do

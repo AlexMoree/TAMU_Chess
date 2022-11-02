@@ -1,15 +1,16 @@
+# frozen_string_literal: true
+
 class QrCodesController < ApplicationController
-  before_action :set_qr_code, only: %i[ show edit update destroy ]
+  before_action :set_qr_code, only: %i[show edit update destroy]
   before_action :authenticate_admin!
-  
+
   # GET /qr_codes or /qr_codes.json
   def index
     @qr_codes = QrCode.all
   end
 
   # GET /qr_codes/1 or /qr_codes/1.json
-  def show
-  end
+  def show; end
 
   # GET /qr_codes/new
   def new
@@ -17,8 +18,7 @@ class QrCodesController < ApplicationController
   end
 
   # GET /qr_codes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /qr_codes or /qr_codes.json
   def create
@@ -59,13 +59,14 @@ class QrCodesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_qr_code
-      @qr_code = QrCode.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def qr_code_params
-      params.require(:qr_code).permit(:title, :qr_url)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_qr_code
+    @qr_code = QrCode.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def qr_code_params
+    params.require(:qr_code).permit(:title, :qr_url)
+  end
 end

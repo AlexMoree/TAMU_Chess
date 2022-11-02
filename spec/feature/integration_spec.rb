@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # location: spec/feature/integration_spec.rb
 require 'rails_helper'
 
@@ -9,9 +11,8 @@ RSpec.describe 'Authentication', type: :feature do
     Rails.application.env_config['devise.mapping'] = Devise.mappings[:admin]
     Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_admin]
     visit admin_google_oauth2_omniauth_authorize_path
-   end
+  end
 end
-
 
 RSpec.describe 'New Personal Information', type: :feature do
   scenario 'valid inputs' do
@@ -34,7 +35,7 @@ end
 
 # RSpec.describe 'New Qr Code', type: :feature do
 #   scenario 'valid inputs' do
-#     visit new_qr_code_path  
+#     visit new_qr_code_path
 
 #     fill_in 'title', with: 'Example'
 #     fill_in 'qr_url', with: 'https://example.com'
@@ -45,7 +46,6 @@ end
 
 RSpec.describe 'Attendance', type: :feature do
   scenario 'valid inputs' do
-
     visit new_attendence_path
     fill_in 'Uin', with: '111111111'
 
