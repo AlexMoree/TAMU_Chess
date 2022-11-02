@@ -10,3 +10,27 @@
 # See https://docs.rubocop.org/rubocop/configuration
 Layout/LineLength:
   Max: 200
+
+BlockLength:
+  Max: 200
+
+Metrics/MethodLength:
+  Max: 100
+
+Style/Documentation:
+  Enabled: False
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrix/PerceivedComplexity:
+  Max: 10
+
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/AbcSize:
+  Max: 51.50
+
+Layout/EndOfLine:
+  Enabled: False

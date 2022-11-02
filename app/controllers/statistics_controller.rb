@@ -64,7 +64,6 @@ class StatisticsController < ApplicationController
       if (full_data['code']).zero?
         # puts "username does not exist"
         return [-1, -1, -1]
-      else
         # puts "username exists no exception on array"
       end
     rescue StandardError
@@ -119,7 +118,6 @@ class StatisticsController < ApplicationController
       if full_data['error'] == 'Not found'
         # puts "username does not exist"
         return [-1, -1, -1]
-      else
         # puts "username exists no exception on array"
       end
     rescue StandardError
@@ -158,32 +156,32 @@ class StatisticsController < ApplicationController
   #   #loop through usernames
   #   personal_informations.each do |personal_information|
   #     if personal_information.lichess_org_username != "" && personal_information.chess_com_username != ""
-  #       current_username_1 = personal_information.lichess_org_username
-  #       current_username_2 = personal_information.chess_com_username
+  #       current_username_one = personal_information.lichess_org_username
+  #       current_username_two = personal_information.chess_com_username
   #       actual_name = personal_information.first_name + " " + personal_information.last_name
 
-  #       current_stats_1 = get_http_request_lichess(current_username_1)
-  #       if current_stats_1[0] == -1
+  #       current_stats_one = get_http_request_lichess(current_username_one)
+  #       if current_stats_one[0] == -1
   #         puts "lichess.org username skipped"
   #         next
   #       end
 
-  #       current_stats_2 = get_http_request_chess(current_username_2)
-  #       if current_stats_2[0] == -1
+  #       current_stats_two = get_http_request_chess(current_username_two)
+  #       if current_stats_two[0] == -1
   #         puts "chess.com username skipped"
   #         next
   #       end
 
   #       statistic = Statistic.new
   #       statistic.actual_name = actual_name
-  #       statistic.lichess_username = current_username_1
-  #       statistic.lichess_blitz = current_stats_1[0]
-  #       statistic.lichess_rapid = current_stats_1[1]
-  #       statistic.lichess_total_played = current_stats_1[2]
-  #       statistic.chess_username = current_username_2
-  #       statistic.chess_blitz = current_stats_2[0]
-  #       statistic.chess_rapid = current_stats_2[1]
-  #       statistic.chess_total_played = current_stats_2[2]
+  #       statistic.lichess_username = current_username_one
+  #       statistic.lichess_blitz = current_stats_one[0]
+  #       statistic.lichess_rapid = current_stats_one[1]
+  #       statistic.lichess_total_played = current_stats_one[2]
+  #       statistic.chess_username = current_username_two
+  #       statistic.chess_blitz = current_stats_two[0]
+  #       statistic.chess_rapid = current_stats_two[1]
+  #       statistic.chess_total_played = current_stats_two[2]
   #       statistic.save
 
   #     elsif personal_information.lichess_org_username != ""
@@ -266,32 +264,32 @@ class StatisticsController < ApplicationController
       actual_name = "#{personal_information.first_name} #{personal_information.last_name}"
       puts 'actual_Name                 :'
       puts actual_name
-      current_username_1 = personal_information.lichess_org_username
-      current_username_2 = personal_information.chess_com_username
+      current_username_one = personal_information.lichess_org_username
+      current_username_two = personal_information.chess_com_username
       puts 'lichess username:'
-      current_username_1 = 'No Username' if current_username_1 == ''
-      puts current_username_1
+      current_username_one = 'No Username' if current_username_one == ''
+      puts current_username_one
       puts 'chess.com username:'
-      current_username_2 = 'No Username' if current_username_2 == ''
-      puts current_username_2
+      current_username_two = 'No Username' if current_username_two == ''
+      puts current_username_two
 
-      current_stats_1 = get_http_request_lichess(current_username_1)
-      puts 'current_stats_1~~~~~~~~~~~~~~~~~:'
-      puts current_stats_1
-      current_stats_2 = get_http_request_chess(current_username_2)
-      puts 'current_stats_2~~~~~~~~~~~~~~~~~:'
-      puts current_stats_2
+      current_stats_one = get_http_request_lichess(current_username_one)
+      puts 'current_stats_one~~~~~~~~~~~~~~~~~:'
+      puts current_stats_one
+      current_stats_two = get_http_request_chess(current_username_two)
+      puts 'current_stats_two~~~~~~~~~~~~~~~~~:'
+      puts current_stats_two
 
       statistic = Statistic.new
       statistic.actual_name = actual_name
-      statistic.lichess_username = current_username_1
-      statistic.lichess_blitz = current_stats_1[0]
-      statistic.lichess_rapid = current_stats_1[1]
-      statistic.lichess_total_played = current_stats_1[2]
-      statistic.chess_username = current_username_2
-      statistic.chess_blitz = current_stats_2[0]
-      statistic.chess_rapid = current_stats_2[1]
-      statistic.chess_total_played = current_stats_2[2]
+      statistic.lichess_username = current_username_one
+      statistic.lichess_blitz = current_stats_one[0]
+      statistic.lichess_rapid = current_stats_one[1]
+      statistic.lichess_total_played = current_stats_one[2]
+      statistic.chess_username = current_username_two
+      statistic.chess_blitz = current_stats_two[0]
+      statistic.chess_rapid = current_stats_two[1]
+      statistic.chess_total_played = current_stats_two[2]
       statistic.save
     end
   end

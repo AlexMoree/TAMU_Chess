@@ -64,11 +64,11 @@ class PersonalInformationsController < ApplicationController
     end
   end
 
-  def getSemesterStart
+  def semester_start
     # use instance variable to communicate with V
   end
 
-  def getSemesterEnd
+  def semester_end
     # use instance variable to communicate with V
   end
 
