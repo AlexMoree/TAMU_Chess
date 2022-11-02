@@ -3,6 +3,16 @@ require 'rails_helper'
 
 OmniAuth.config.silence_get_warning = true
 
+RSpec.describe 'Authentication', type: :feature do
+  before do
+    Admin.create_or_find_by!(email: 'Alex_moree@tamu.edu')
+    Rails.application.env_config['devise.mapping'] = Devise.mappings[:admin]
+    Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_admin]
+    visit admin_google_oauth2_omniauth_authorize_path
+   end
+end
+
+
 RSpec.describe 'New Personal Information', type: :feature do
   scenario 'valid inputs' do
     visit new_personal_information_path
@@ -14,6 +24,11 @@ RSpec.describe 'New Personal Information', type: :feature do
     fill_in 'Chess com username', with: 'Carson'
     fill_in 'Lichess org username', with: 'Carson'
     click_on 'Create Personal information'
+    visit personal_informations_path
+    Admin.create_or_find_by!(email: 'Alex_moree@tamu.edu')
+    Rails.application.env_config['devise.mapping'] = Devise.mappings[:admin]
+    Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_admin]
+    visit admin_google_oauth2_omniauth_authorize_path
   end
 end
 
