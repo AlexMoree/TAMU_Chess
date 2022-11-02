@@ -4,5 +4,6 @@ class PersonalInformation < ApplicationRecord
 
     belongs_to :attendence, :optional => true
 
+    validates :uin, length: { minimum: 9, maximum: 9 }
     validates :uin, :first_name, :last_name, :email, :start_date, :end_date, presence: true
 end
