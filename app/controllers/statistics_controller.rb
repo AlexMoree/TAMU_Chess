@@ -158,37 +158,37 @@ class StatisticsController < ApplicationController
   #   #loop through usernames
   #   personal_informations.each do |personal_information|
   #     if personal_information.lichess_org_username != "" && personal_information.chess_com_username != ""
-  #       currentUsername1 = personal_information.lichess_org_username
-  #       currentUsername2 = personal_information.chess_com_username
-  #       actualName = personal_information.first_name + " " + personal_information.last_name
+  #       current_username_1 = personal_information.lichess_org_username
+  #       current_username_2 = personal_information.chess_com_username
+  #       actual_name = personal_information.first_name + " " + personal_information.last_name
 
-  #       currentStats1 = get_http_request_lichess(currentUsername1)
-  #       if currentStats1[0] == -1
+  #       current_stats_1 = get_http_request_lichess(current_username_1)
+  #       if current_stats_1[0] == -1
   #         puts "lichess.org username skipped"
   #         next
   #       end
 
-  #       currentStats2 = get_http_request_chess(currentUsername2)
-  #       if currentStats2[0] == -1
+  #       current_stats_2 = get_http_request_chess(current_username_2)
+  #       if current_stats_2[0] == -1
   #         puts "chess.com username skipped"
   #         next
   #       end
 
   #       statistic = Statistic.new
-  #       statistic.actual_name = actualName
-  #       statistic.lichess_username = currentUsername1
-  #       statistic.lichess_blitz = currentStats1[0]
-  #       statistic.lichess_rapid = currentStats1[1]
-  #       statistic.lichess_total_played = currentStats1[2]
-  #       statistic.chess_username = currentUsername2
-  #       statistic.chess_blitz = currentStats2[0]
-  #       statistic.chess_rapid = currentStats2[1]
-  #       statistic.chess_total_played = currentStats2[2]
+  #       statistic.actual_name = actual_name
+  #       statistic.lichess_username = current_username_1
+  #       statistic.lichess_blitz = current_stats_1[0]
+  #       statistic.lichess_rapid = current_stats_1[1]
+  #       statistic.lichess_total_played = current_stats_1[2]
+  #       statistic.chess_username = current_username_2
+  #       statistic.chess_blitz = current_stats_2[0]
+  #       statistic.chess_rapid = current_stats_2[1]
+  #       statistic.chess_total_played = current_stats_2[2]
   #       statistic.save
 
   #     elsif personal_information.lichess_org_username != ""
   #       currentUsername = personal_information.lichess_org_username
-  #       actualName = personal_information.first_name + " " + personal_information.last_name
+  #       actual_name = personal_information.first_name + " " + personal_information.last_name
 
   #       currentStats = get_http_request_lichess(currentUsername)
   #       if currentStats[0] == -1
@@ -198,7 +198,7 @@ class StatisticsController < ApplicationController
 
   #       #create new row
   #       statistic = Statistic.new
-  #       statistic.actual_name = actualName
+  #       statistic.actual_name = actual_name
   #       statistic.lichess_username = currentUsername
   #       statistic.lichess_blitz = currentStats[0]
   #       statistic.lichess_rapid = currentStats[1]
@@ -212,7 +212,7 @@ class StatisticsController < ApplicationController
 
   #     elsif personal_information.chess_com_username != ""
   #       currentUsername = personal_information.chess_com_username
-  #       actualName = personal_information.first_name + " " + personal_information.last_name
+  #       actual_name = personal_information.first_name + " " + personal_information.last_name
 
   #       currentStats = get_http_request_chess(currentUsername)
   #       ##if returns blank, username errored
@@ -223,7 +223,7 @@ class StatisticsController < ApplicationController
 
   #       #create new row
   #       statistic = Statistic.new
-  #       statistic.actual_name = actualName
+  #       statistic.actual_name = actual_name
   #       statistic.lichess_username = -1
   #       statistic.lichess_blitz = -1
   #       statistic.lichess_rapid = -1
@@ -263,35 +263,35 @@ class StatisticsController < ApplicationController
     personal_informations.each do |personal_information|
       puts 'looped'
 
-      actualName = "#{personal_information.first_name} #{personal_information.last_name}"
+      actual_name = "#{personal_information.first_name} #{personal_information.last_name}"
       puts 'actual_Name                 :'
-      puts actualName
-      currentUsername1 = personal_information.lichess_org_username
-      currentUsername2 = personal_information.chess_com_username
+      puts actual_name
+      current_username_1 = personal_information.lichess_org_username
+      current_username_2 = personal_information.chess_com_username
       puts 'lichess username:'
-      currentUsername1 = 'No Username' if currentUsername1 == ''
-      puts currentUsername1
+      current_username_1 = 'No Username' if current_username_1 == ''
+      puts current_username_1
       puts 'chess.com username:'
-      currentUsername2 = 'No Username' if currentUsername2 == ''
-      puts currentUsername2
+      current_username_2 = 'No Username' if current_username_2 == ''
+      puts current_username_2
 
-      currentStats1 = get_http_request_lichess(currentUsername1)
-      puts 'currentStats1~~~~~~~~~~~~~~~~~:'
-      puts currentStats1
-      currentStats2 = get_http_request_chess(currentUsername2)
-      puts 'currentStats2~~~~~~~~~~~~~~~~~:'
-      puts currentStats2
+      current_stats_1 = get_http_request_lichess(current_username_1)
+      puts 'current_stats_1~~~~~~~~~~~~~~~~~:'
+      puts current_stats_1
+      current_stats_2 = get_http_request_chess(current_username_2)
+      puts 'current_stats_2~~~~~~~~~~~~~~~~~:'
+      puts current_stats_2
 
       statistic = Statistic.new
-      statistic.actual_name = actualName
-      statistic.lichess_username = currentUsername1
-      statistic.lichess_blitz = currentStats1[0]
-      statistic.lichess_rapid = currentStats1[1]
-      statistic.lichess_total_played = currentStats1[2]
-      statistic.chess_username = currentUsername2
-      statistic.chess_blitz = currentStats2[0]
-      statistic.chess_rapid = currentStats2[1]
-      statistic.chess_total_played = currentStats2[2]
+      statistic.actual_name = actual_name
+      statistic.lichess_username = current_username_1
+      statistic.lichess_blitz = current_stats_1[0]
+      statistic.lichess_rapid = current_stats_1[1]
+      statistic.lichess_total_played = current_stats_1[2]
+      statistic.chess_username = current_username_2
+      statistic.chess_blitz = current_stats_2[0]
+      statistic.chess_rapid = current_stats_2[1]
+      statistic.chess_total_played = current_stats_2[2]
       statistic.save
     end
   end
