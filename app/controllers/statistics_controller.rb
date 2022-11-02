@@ -34,7 +34,7 @@ class StatisticsController < ApplicationController
   helper_method :get_http_request_chess
   def get_http_request_chess(username)
 
-    if username == ""
+    if username == "No Username"
       puts "username blank"
       return [0, 0, 0]
     end
@@ -96,7 +96,7 @@ class StatisticsController < ApplicationController
   helper_method :get_http_request_lichess
   def get_http_request_lichess(username)
 
-    if username == ""
+    if username == "No Username"
       puts "username blank"
       return [0, 0, 0]
     end
@@ -268,15 +268,27 @@ class StatisticsController < ApplicationController
       puts "looped"
 
       actualName = personal_information.first_name + " " + personal_information.last_name
+      puts "actual_Name                 :"
+      puts actualName
       currentUsername1 = personal_information.lichess_org_username
       currentUsername2 = personal_information.chess_com_username
       puts "lichess username:"
+      if (currentUsername1 == "") 
+        currentUsername1 = "No Username"
+      end
       puts currentUsername1
       puts "chess.com username:"
+      if (currentUsername2 == "") 
+        currentUsername2 = "No Username"
+      end
       puts currentUsername2
 
       currentStats1 = get_http_request_lichess(currentUsername1)
+      puts "currentStats1~~~~~~~~~~~~~~~~~:"
+      puts currentStats1
       currentStats2 = get_http_request_chess(currentUsername2)
+      puts "currentStats2~~~~~~~~~~~~~~~~~:"
+      puts currentStats2
 
       statistic = Statistic.new
       statistic.actual_name = actualName
