@@ -1,9 +1,11 @@
 # location: spec/unit/unit_spec.rb
 require 'rails_helper'
 
+OmniAuth.config.test_mode = true
+
 RSpec.describe(Attendence, type: :model) do
   subject do
-    described_class.new(uin: '1010001101', day_of_event: '10/2/2022')
+    described_class.new(uin: '101111009', day_of_event: '10/2/2022')
   end
 
   it 'is valid with valid attributes' do
@@ -55,7 +57,7 @@ end
 
 RSpec.describe(PersonalInformation, type: :model) do
   subject do
-    described_class.new(uin: '1010001100', first_name: 'Carson',last_name: 'Util',
+    described_class.new(uin: '101111009', first_name: 'Carson',last_name: 'Util',
     email: 'Carson_Util@tamu.edu',discord_username: 'Carson#11000',membership: '1',
     start_date: '1/1/2022',end_date: '12/1/2022',
     chess_com_username: 'Carson100',lichess_org_username: 'Carson100')
