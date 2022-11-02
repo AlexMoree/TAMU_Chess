@@ -20,8 +20,8 @@
     <%= form.label :day_of_event %>
     <% t = Time.now %>
     <% x = t.strftime('%Y') %>
-    <% x = x + '-' + t.strftime('%M') %>
-    <% x = x + '-' + t.strftime('%D') %>
+    <% x = x + '-' + t.strftime('%m') %>
+    <% x = x + '-' + t.strftime('%d') %>
     <%= form.date_field :day_of_event, :value => x %>
   </div>  
 
