@@ -26,7 +26,7 @@ class QrCodesController < ApplicationController
 
     respond_to do |format|
       if @qr_code.save
-        format.html { redirect_to qr_code_url(@qr_code), notice: "Qr code was successfully created." }
+        format.html { redirect_to qr_code_url(@qr_code), notice: 'Qr code was successfully created.' }
         format.json { render :show, status: :created, location: @qr_code }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class QrCodesController < ApplicationController
   def update
     respond_to do |format|
       if @qr_code.update(qr_code_params)
-        format.html { redirect_to qr_code_url(@qr_code), notice: "Qr code was successfully updated." }
+        format.html { redirect_to qr_code_url(@qr_code), notice: 'Qr code was successfully updated.' }
         format.json { render :show, status: :ok, location: @qr_code }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class QrCodesController < ApplicationController
     @qr_code.destroy
 
     respond_to do |format|
-      format.html { redirect_to qr_codes_url, notice: "Qr code was successfully destroyed." }
+      format.html { redirect_to qr_codes_url, notice: 'Qr code was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

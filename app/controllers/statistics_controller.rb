@@ -6,7 +6,7 @@ class StatisticsController < ApplicationController
   def index
     @statistics = Statistic.all
 
-    if params[:sort] == "actual_name" 
+    if params[:sort] == 'actual_name' 
       @statistics = Statistic.order("actual_name")
     elsif params[:sort] == "chess_username"
       @statistics = Statistic.order("chess_username")

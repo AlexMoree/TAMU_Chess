@@ -4,7 +4,7 @@ class PersonalInformationsController < ApplicationController
 
   # GET /personal_informations or /personal_informations.json
   def index
-    if params[:paid] == "true"
+    if params[:paid] == 'true'
       @personal_informations = PersonalInformation.where(membership: true)
     else
       @personal_informations = PersonalInformation.where(membership: false)
@@ -32,7 +32,7 @@ class PersonalInformationsController < ApplicationController
 
     respond_to do |format|
       if @personal_information.save
-        format.html { redirect_to personal_information_url(@personal_information), notice: "Personal information was successfully created." }
+        format.html { redirect_to personal_information_url(@personal_information), notice: 'Personal information was successfully created.' }
         format.json { render :show, status: :created, location: @personal_information }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,7 +45,7 @@ class PersonalInformationsController < ApplicationController
   def update
     respond_to do |format|
       if @personal_information.update(personal_information_params)
-        format.html { redirect_to personal_information_url(@personal_information), notice: "Personal information was successfully updated." }
+        format.html { redirect_to personal_information_url(@personal_information), notice: 'Personal information was successfully updated.' }
         format.json { render :show, status: :ok, location: @personal_information }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,7 +59,7 @@ class PersonalInformationsController < ApplicationController
     @personal_information.destroy
 
     respond_to do |format|
-      format.html { redirect_to personal_informations_url, notice: "Personal information was successfully destroyed." }
+      format.html { redirect_to personal_informations_url, notice: 'Personal information was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
