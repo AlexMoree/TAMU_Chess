@@ -1,1 +1,3 @@
-json.array! @qr_codes, partial: "qr_codes/qr_code", as: :qr_code
+# frozen_string_literal: true
+
+json.array! @qr_codes, partial: 'qr_codes/qr_code', as: :qr_code
