@@ -36,12 +36,12 @@
     <%= form.text_field :discord_username %>
   </div>  
 
-  <div class="field">
+  <div hidden class="field">
     <%= form.label :membership %>
     <%= form.check_box :membership %>
   </div>  
 
-  <div class="field">
+  <div hidden class="field_date" >
     <%= form.label :start_date %>
     <% t = Time.now %>
     <% x = t.strftime('%Y') %>
@@ -51,10 +51,12 @@
     <% else %>
       <% x = x + '-08-01' %>
     <% end %>
+    
     <%= form.date_field :start_date, :value => x %>
+    
   </div>  
 
-  <div class="field">
+  <div hidden class="field_date">
     <%= form.label :end_date %>
     <% t = Time.now %>
     <% x = t.strftime('%Y') %>
@@ -64,8 +66,10 @@
     <% else %>
       <% x = x + '-12-31' %>
     <% end %>
+    
     <%= form.date_field :end_date, :value => x %>
   </div>  
+
 
   <div class="field">
     <%= form.label :chess_com_username %>

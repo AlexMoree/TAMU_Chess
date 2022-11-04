@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id='notice'><%= notice %></p>
 
 <h1>Attendances</h1>
 
@@ -7,7 +7,7 @@
     <tr>
       <th>Student UIN</th>
       <th>Date of Attendance</th>
-      <th colspan="3"></th>
+      <th colspan='3'></th>
     </tr>
   </thead>
 
@@ -16,7 +16,9 @@
       <tr>
         <td><%= attendence.uin %></td>
         <td><%= attendence.day_of_event %></td>
+        <!--
         <td><%= link_to 'Show', attendence %></td>
+        -->
         <td><%= link_to 'Edit', edit_attendence_path(attendence) %></td>
         <td><%= link_to 'Destroy', attendence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -24,6 +26,9 @@
   </tbody>
 </table>
 
+<br>
+<br>
+<%= link_to 'New', new_attendence_path %>
 <br>
 <br>
 <%= link_to 'Back', homes_path %>
