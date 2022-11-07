@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 class AttendencesController < ApplicationController
   before_action :authenticate_admin!, except: :new
-  before_action :set_attendence, only: %i[ show edit update destroy ]
+  before_action :set_attendence, only: %i[show edit update destroy]
   # GET /attendences or /attendences.json
   def index
     @attendences = Attendence.all
   end
 
   # GET /attendences/1 or /attendences/1.json
-  def show
-  end
+  def show; end
 
   # GET /attendences/new
   def new
@@ -16,8 +17,7 @@ class AttendencesController < ApplicationController
   end
 
   # GET /attendences/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /attendences or /attendences.json
   def create
@@ -25,7 +25,7 @@ class AttendencesController < ApplicationController
 
     respond_to do |format|
       if @attendence.save
-        format.html { redirect_to attendence_url(@attendence), notice: "Attendence was successfully created." }
+        format.html { redirect_to attendence_url(@attendence), notice: 'Attendence was successfully created.' }
         format.json { render :show, status: :created, location: @attendence }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class AttendencesController < ApplicationController
   def update
     respond_to do |format|
       if @attendence.update(attendence_params)
-        format.html { redirect_to attendence_url(@attendence), notice: "Attendence was successfully updated." }
+        format.html { redirect_to attendence_url(@attendence), notice: 'Attendence was successfully updated.' }
         format.json { render :show, status: :ok, location: @attendence }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +52,20 @@ class AttendencesController < ApplicationController
     @attendence.destroy
 
     respond_to do |format|
-      format.html { redirect_to attendences_url, notice: "Attendence was successfully destroyed." }
+      format.html { redirect_to attendences_url, notice: 'Attendence was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_attendence
-      @attendence = Attendence.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def attendence_params
-      params.require(:attendence).permit(:uin, :day_of_event)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_attendence
+    @attendence = Attendence.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def attendence_params
+    params.require(:attendence).permit(:uin, :day_of_event)
+  end
 end
