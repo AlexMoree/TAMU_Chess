@@ -2,7 +2,7 @@
 
 <h1>Attendances</h1>
 
-<%= line_chart Attendence.group(:day_of_event).count, xtitle: "Date", ytitle: "Attendence" %>
+<%= line_chart Attendence.group(:day_of_event).count.sort_by {|k,v| k}.reverse[0..11], xtitle: "Date", ytitle: "Attendence" %>
 
 <table>
   <thead>
