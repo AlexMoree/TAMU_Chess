@@ -266,6 +266,11 @@ class StatisticsController < ApplicationController
       actual_name = "#{personal_information.first_name} #{personal_information.last_name}"
       puts 'actual_Name                 :'
       puts actual_name
+
+      puts "uin"
+      uin = personal_information.uin
+      puts uin
+      
       current_username_one = personal_information.lichess_org_username
       current_username_two = personal_information.chess_com_username
       puts 'lichess username:'
@@ -284,7 +289,7 @@ class StatisticsController < ApplicationController
 
       statistic = Statistic.new
       statistic.actual_name = actual_name
-      statistic.uin = personal_information.uin
+      statistic.uin = uin
       statistic.lichess_username = current_username_one
       statistic.lichess_blitz = current_stats_one[0]
       statistic.lichess_rapid = current_stats_one[1]
