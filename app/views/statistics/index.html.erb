@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th><%= link_to "Name", :sort => "actual_name" %></th>
-      <th><%= link_to "UIN", :sort => "uin" %></th>
       <th><%= link_to "Chess.com username", :sort => "chess_username" %></th>
       <th><%= link_to "Blitz", :sort => "chess_blitz" %></th>
       <th><%= link_to "Rapid", :sort => "chess_rapid" %></th>  
@@ -24,7 +23,6 @@
     <% @statistics.each do |statistic| %>
       <tr>
         <td><%= statistic.actual_name %></td>
-        <td><%= statistic.uin %></td>
         <td><%= statistic.chess_username %></td>
         <td><%= statistic.chess_blitz %></td>
         <td><%= statistic.chess_rapid %></td>
@@ -33,7 +31,6 @@
         <td><%= statistic.lichess_blitz %></td>
         <td><%= statistic.lichess_rapid %></td>
         <td><%= statistic.lichess_total_played %></td>
-        <td><%= link_to 'Show', statistic %></td>
       </tr>
     <% end %>
   </tbody>
