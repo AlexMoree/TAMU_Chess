@@ -484,9 +484,9 @@ class StatisticsController < ApplicationController
     # puts full_data["perfs"]["blitz"]["rating"]
     # puts full_data["perfs"]["rapid"]["rating"]
     # puts full_data["count"]["all"]
-    stats <<  full_data['perfs']['blitz']['rating']
-    stats <<  full_data['perfs']['rapid']['rating']
-    stats <<  full_data['count']['all']
+    stats << full_data['perfs']['blitz']['rating']
+    stats << full_data['perfs']['rapid']['rating']
+    stats << full_data['count']['all']
     # puts stats
     stats
   end

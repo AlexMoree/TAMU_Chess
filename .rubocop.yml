@@ -72,6 +72,18 @@ Metrics/AbcSize:
   Exclude:
     - db/schema.rb
 
+Naming/MethodName:
+  Enabled: True
+  EnforcedStyle: snake_case
+  Exclude:
+    - db/schema.rb
+
+Naming/VariableName:
+  Enabled: True
+  EnforcedStyle: snake_case
+  Exclude:
+    - db/schema.rb
+
 Layout/EndOfLine:
   Enabled: False
   Exclude:
