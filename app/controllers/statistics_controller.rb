@@ -307,6 +307,6 @@ class StatisticsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def statistic_params
-    params.require(:statistic).permit(:actual_name, :chess_username, :chess_blitz, :chess_rapid, :chess_total_played, :lichess_username, :lichess_blitz, :lichess_rapid, :lichess_total_played)
+    params.require(:statistic).permit(:actual_name, :uin, :chess_username, :chess_blitz, :chess_rapid, :chess_total_played, :lichess_username, :lichess_blitz, :lichess_rapid, :lichess_total_played)
   end
 end
