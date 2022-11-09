@@ -8,29 +8,71 @@
 # where the inspected file is and continue its way up to the root directory.
 #
 # See https://docs.rubocop.org/rubocop/configuration
-Layout/LineLength:
-  Max: 200
 
-BlockLength:
+Layout/LineLength:
+  Max: 300
+  Enabled: True
+  Exclude:
+    - db/schema.rb
+
+Metrics/BlockLength:
   Max: 200
+  Enabled: True
+  Exclude:
+    - db/schema.rb
 
 Metrics/MethodLength:
   Max: 100
+  Enabled: True
+  Exclude:
+    - db/schema.rb
 
 Style/Documentation:
   Enabled: False
+  Exclude:
+    - db/schema.rb
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - db/schema.rb
+
+Style/StringLiterals:
+  Exclude:
+    - db/schema.rb
+
+Style/NumericLiterals:
+  Exclude:
+    - db/schema.rb
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - db/schema.rb
 
 Metrics/CyclomaticComplexity:
   Max: 10
+  Enabled: True
+  Exclude:
+    - db/schema.rb
 
-Metrix/PerceivedComplexity:
+Metrics/PerceivedComplexity:
   Max: 10
+  Enabled: True
+  Exclude:
+    - db/schema.rb
 
 Metrics/ClassLength:
   Max: 150
+  Enabled: True
+  Exclude:
+    - db/schema.rb
 
 Metrics/AbcSize:
   Max: 51.50
+  Enabled: True
+  Exclude:
+    - db/schema.rb
 
 Layout/EndOfLine:
   Enabled: False
+  Exclude:
+    - db/schema.rb
