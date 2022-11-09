@@ -6,6 +6,12 @@ class AttendencesController < ApplicationController
   # GET /attendences or /attendences.json
   def index
     @attendences = Attendence.all
+
+    if params[:sort] == 'uin'
+      @statistics = Statistic.order('uin')
+    elsif params[:sort] == 'day_of_event'
+      @statistics = Statistic.order("#{params[:sort]} day_of_event")
+    end
   end
 
   # GET /attendences/1 or /attendences/1.json

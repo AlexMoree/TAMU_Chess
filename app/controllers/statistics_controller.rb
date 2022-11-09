@@ -10,6 +10,8 @@ class StatisticsController < ApplicationController
 
     if params[:sort] == 'actual_name'
       @statistics = Statistic.order('actual_name')
+    elsif params[:sort] == 'uin'
+      @statistics = Statistic.order('uin')
     elsif params[:sort] == 'chess_username'
       @statistics = Statistic.order('chess_username')
     elsif params[:sort] == 'lichess_username'
@@ -282,6 +284,7 @@ class StatisticsController < ApplicationController
 
       statistic = Statistic.new
       statistic.actual_name = actual_name
+      statistic.uin = personal_information.uin
       statistic.lichess_username = current_username_one
       statistic.lichess_blitz = current_stats_one[0]
       statistic.lichess_rapid = current_stats_one[1]
