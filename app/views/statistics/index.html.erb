@@ -1,7 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="center">
+  <div class="background_color">
+    <div class="font">
+      <p id="notice"><%= notice %></p>
 
-<h1>Statistics</h1>
+      <h1>Statistics</h1>
 
+<<<<<<< HEAD
 <table>
   <thead>
     <tr>
@@ -38,10 +42,49 @@
     <% end %>
   </tbody>
 </table>
+=======
+      <table class="table_center">
+        <thead>
+          <tr>
+            <th><%= link_to "Name", :sort => "actual_name" %></th>
+            <th><%= link_to "Chess.com username", :sort => "chess_username" %></th>
+            <th><%= link_to "Blitz", :sort => "chess_blitz" %></th>
+            <th><%= link_to "Rapid", :sort => "chess_rapid" %></th>  
+            <th><%= link_to "Total played", :sort => "chess_total_played" %></th>
+            <th><%= link_to "Lichess.org username", :sort => "lichess_username" %></th>
+            <th><%= link_to "Blitz", :sort => "lichess_blitz" %></th>
+            <th><%= link_to "Rapid", :sort => "lichess_rapid"%></th>  
+            <th><%= link_to "Total played", :sort => "lichess_total_played" %></th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<br>
-<br>
-<%= link_to 'Update', statistics_path %>
-<br>
-<br>
-<%= link_to 'Back', homes_path %>
+        <tbody>
+          <% update_statistic_table %>
+          <% @statistics.each do |statistic| %>
+            <tr>
+              <td><%= statistic.actual_name %></td>
+              <td><%= statistic.chess_username %></td>
+              <td><%= statistic.chess_blitz %></td>
+              <td><%= statistic.chess_rapid %></td>
+              <td><%= statistic.chess_total_played %></td>
+              <td><%= statistic.lichess_username %></td>
+              <td><%= statistic.lichess_blitz %></td>
+              <td><%= statistic.lichess_rapid %></td>
+              <td><%= statistic.lichess_total_played %></td>
+              <td><%= link_to 'Show', statistic %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+>>>>>>> d87342456d664c66e3758877c5b5078128269e35
+
+      <br>
+      <br>
+      <%= link_to 'Update', statistics_path %>
+      <br>
+      <br>
+      <%= link_to 'Back', homes_path %>
+    </div>
+  </div>
+</div>

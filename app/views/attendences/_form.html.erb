@@ -11,21 +11,27 @@
     </div>
   <% end %>
 
-  <div class='field'>
-    <%= form.label :uin %>
-    <%= form.text_field :uin %>
-  </div>
+  <div class="center">
+    <div class="background_color">
+      <div class="font">      
+        <div class='field'>
+          <%= form.label :uin %>
+          <%= form.text_field :uin %>
+        </div>
 
-  <div hidden class='field_date' >
-    <%= form.label :day_of_event %>
-    <% t = Time.now %>
-    <% x = t.strftime('%Y') %>
-    <% x = x + '-' + t.strftime('%m') %>
-    <% x = x + '-' + t.strftime('%d') %>
-    <%= form.date_field :day_of_event, :value => x %>
-  </div>  
+        <div hidden class='field_date' >
+          <%= form.label :day_of_event %>
+          <% t = Time.now %>
+          <% x = t.strftime('%Y') %>
+          <% x = x + '-' + t.strftime('%m') %>
+          <% x = x + '-' + t.strftime('%d') %>
+          <%= form.date_field :day_of_event, :value => x %>
+        </div>  
 
-  <div class='actions'>
-    <%= form.submit %>
+        <div class='actions'>
+          <%= form.submit %>
+        </div>
+      <% end %>
+      </div>
+    </div>
   </div>
-<% end %>

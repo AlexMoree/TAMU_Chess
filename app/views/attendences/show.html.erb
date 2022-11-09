@@ -1,18 +1,24 @@
-<p id='notice'><%= notice %></p>
+<div class="center">
+  <div class="background_color">
+    <div class="font">
+      <p id='notice'><%= notice %></p>
 
-<h1>Thank you for submitting your attendance</h1>
+      <h1>Thank you for submitting your attendance</h1>
 
-<p>
-  <strong>Student UIN:</strong>
-  <%= @attendence.uin %>
-</p>
+      <p>
+        <strong>Student UIN:</strong>
+        <%= @attendence.uin %>
+      </p>
 
-<p>
-  <strong>Event Day:</strong>
-  <%= @attendence.day_of_event %>
-</p>
+      <p>
+        <strong>Event Day:</strong>
+        <%= @attendence.day_of_event %>
+      </p>
 
-<!--
-<%= link_to 'Edit', edit_attendence_path(@attendence) %> 
--->
-<%= link_to 'Back', attendences_path %> 
+      <!--
+      <%= link_to 'Edit', edit_attendence_path(@attendence) %> 
+      -->
+      <%= link_to 'Back', attendences_path %>
+    </div>
+  </div>
+</div> 

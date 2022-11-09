@@ -10,18 +10,24 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="center">
+    <div class="background_color">
+      <div class="font">
+        <div class="field">
+          <%= form.label :title %>
+          <%= form.text_field :title %>
+        </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+        <div class="field">
+          <%= form.label :qr_url %>
+          <%= form.text_field :qr_url %>
+        </div>
 
-  <div class="field">
-    <%= form.label :qr_url %>
-    <%= form.text_field :qr_url %>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
