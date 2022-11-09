@@ -11,43 +11,45 @@
         <%= link_to "Show student with membership only", :paid => "true" %>
         <%= link_to "Show all students", :paid => "false" %>
 
-        <table>
-          <thead>
-            <tr>
-              <th><%= link_to "Student UIN", :sort => "uin" %></th>
-              <th><%= link_to "First Name", :sort => "first_name" %></th>
-              <th><%= link_to "Last Name", :sort => "last_name" %></th>
-              <th>Email</th>
-              <th>Membership</th>
-              <th>Start Date</th>
-              <th>End Date</th>
-              <th><%= link_to "Discord Username", :sort => "discord_username" %></th>
-              <th><%= link_to "Chess.com Username", :sort => "chess_com_username" %></th>
-              <th><%= link_to "Lichess.org Username", :sort => "lichess_org_username" %></th>
-              <th colspan="3"></th>
-            </tr> 
-          </thead>
-
-          <tbody>
-            <% @personal_informations.each do |personal_information| %>
+        
+          <table class="table_center">
+            <thead>
               <tr>
-                <td><%= personal_information.uin %></td>
-                <td><%= personal_information.first_name %></td>
-                <td><%= personal_information.last_name %></td>
-                <td><%= personal_information.email %></td>
-                <td><%= personal_information.membership %></td>
-                <td><%= personal_information.start_date %></td>
-                <td><%= personal_information.end_date %></td>
-                <td><%= personal_information.discord_username %></td>
-                <td><%= personal_information.chess_com_username %></td>
-                <td><%= personal_information.lichess_org_username %></td>
+                <th><%= link_to "Student UIN", :sort => "uin" %></th>
+                <th><%= link_to "First Name", :sort => "first_name" %></th>
+                <th><%= link_to "Last Name", :sort => "last_name" %></th>
+                <th>Email</th>
+                <th>Membership</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th><%= link_to "Discord Username", :sort => "discord_username" %></th>
+                <th><%= link_to "Chess.com Username", :sort => "chess_com_username" %></th>
+                <th><%= link_to "Lichess.org Username", :sort => "lichess_org_username" %></th>
+                <th colspan="3"></th>
+              </tr> 
+            </thead>
 
-                <td><%= link_to 'Edit', edit_personal_information_path(personal_information) %></td>
-                <td><%= link_to 'Destroy', personal_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
+            <tbody>
+              <% @personal_informations.each do |personal_information| %>
+                <tr>
+                  <td><%= personal_information.uin %></td>
+                  <td><%= personal_information.first_name %></td>
+                  <td><%= personal_information.last_name %></td>
+                  <td><%= personal_information.email %></td>
+                  <td><%= personal_information.membership %></td>
+                  <td><%= personal_information.start_date %></td>
+                  <td><%= personal_information.end_date %></td>
+                  <td><%= personal_information.discord_username %></td>
+                  <td><%= personal_information.chess_com_username %></td>
+                  <td><%= personal_information.lichess_org_username %></td>
+
+                  <td><%= link_to 'Edit', edit_personal_information_path(personal_information) %></td>
+                  <td><%= link_to 'Destroy', personal_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
         </table>
+        
 
         <br>
         <br>

@@ -44,6 +44,11 @@ body {
     max-height: 200px;
 }
 
+.table_center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 a:link {
     color: white;
 }
