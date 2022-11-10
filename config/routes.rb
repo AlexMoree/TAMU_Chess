@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :attendences
   resources :chesses
   resources :personal_informations
+  resources :documentation
 
   root 'homes#index'
 
