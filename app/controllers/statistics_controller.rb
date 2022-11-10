@@ -165,8 +165,9 @@ class StatisticsController < ApplicationController
       puts 'actual_Name                 :'
       puts actual_name
 
+
+      puts "uin"
       uin = personal_information.uin
-      puts 'uin'
       puts uin
 
       current_username_one = personal_information.lichess_org_username
