@@ -98,4 +98,3 @@ Lint/SuppressedException:
   Enabled: False
   Exclude:
     - db/schema.rb
-
