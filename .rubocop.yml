@@ -61,13 +61,13 @@ Metrics/PerceivedComplexity:
     - db/schema.rb
 
 Metrics/ClassLength:
-  Max: 150
+  Max: 200
   Enabled: True
   Exclude:
     - db/schema.rb
 
 Metrics/AbcSize:
-  Max: 51.50
+  Max: 60.00
   Enabled: True
   Exclude:
     - db/schema.rb
@@ -88,3 +88,14 @@ Layout/EndOfLine:
   Enabled: False
   Exclude:
     - db/schema.rb
+
+Lint/UselessAssignment:
+  Enabled: False
+  Exclude:
+    - db/schema.rb
+
+Lint/SuppressedException:
+  Enabled: False
+  Exclude:
+    - db/schema.rb
+
