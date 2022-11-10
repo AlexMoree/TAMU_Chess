@@ -7,9 +7,10 @@ class AttendencesController < ApplicationController
   def index
     @attendences = Attendence.all
 
-    if params[:sort] == 'uin'
+    case params[:sort]
+    when 'uin'
       @statistics = Statistic.order('uin')
-    elsif params[:sort] == 'day_of_event'
+    when 'day_of_event'
       @statistics = Statistic.order("#{params[:sort]} day_of_event")
     end
   end

@@ -70,4 +70,4 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 
 # graph display
-gem "chartkick"
+gem 'chartkick'
