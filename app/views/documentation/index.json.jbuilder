@@ -1,0 +1,1 @@
+json.array! @documentation, partial: 'documentation/documentation', as: :documentation
