@@ -66,8 +66,12 @@ a:link, a:visited {
     text-decoration: none;
     text-align: center;
     display: inline-block;
-  }
+}
   
-  a:hover, a:active {
+a:hover, a:active {
     background-color: #46212c;
-  }
+}
+
+.header_all{
+    margin-top: 5%;
+}
