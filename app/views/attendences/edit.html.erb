@@ -1,6 +1,13 @@
-<h1>Editing Attendence</h1>
+<div class="center">
+    <div class="background_color">
+        <div class="font">
+            <h1>Editing Attendence</h1>
+            <br>
+            <br>
+            <%= render 'form', attendence: @attendence %>
 
-<%= render 'form', attendence: @attendence %>
-
-<%= link_to 'Show', @attendence %> |
-<%= link_to 'Back', attendences_path %>
+            <%= link_to 'Show', @attendence %> |
+            <%= link_to 'Back', attendences_path %>
+        </div>
+    </div>
+</div>

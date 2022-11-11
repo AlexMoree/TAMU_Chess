@@ -49,10 +49,25 @@ body {
     margin-right: auto;
 }
 
-a:link {
-    color: white;
+table, th, td{
+    border: 1px solid;
 }
 
-a:hover{
-    color: rgb(140, 134, 134);
+.line_chart{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+a:link, a:visited {
+    background-color: #5A2B39;
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: #46212c;
+  }

@@ -1,6 +1,4 @@
-<div class="center">
-    <div class="background_color">
-        <div class="font">
+
         <%= form_with(model: personal_information) do |form| %>
           <% if personal_information.errors.any? %>
             <div id="error_explanation">
@@ -89,6 +87,4 @@
             <%= form.submit %>
           </div>
         <% end %>
-      </div>
-    </div>
-  </div>
+      

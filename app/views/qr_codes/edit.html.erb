@@ -1,6 +1,13 @@
-<h1>Editing Qr Code</h1>
+<div class="center">
+    <div class="background_color">
+        <div class="font">
+            <h1>Editing Qr Code</h1>
+            <br>
+            <br>
+            <%= render 'form', qr_code: @qr_code %>
 
-<%= render 'form', qr_code: @qr_code %>
-
-<%= link_to 'Show', @qr_code %> |
-<%= link_to 'Back', qr_codes_path %>
+            <%= link_to 'Show', @qr_code %> |
+            <%= link_to 'Back', qr_codes_path %>
+        </div>
+    </div>
+</div>

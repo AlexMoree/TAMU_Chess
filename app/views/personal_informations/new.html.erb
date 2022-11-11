@@ -1,7 +1,13 @@
 <div class="center">
-    <h1>New Personal Information</h1>
+    <div class="background_color">
+        <div class="font">
+
+            <h1>New Personal Information</h1>
+            <br>
+            <br>
+            <%= render 'form', personal_information: @personal_information %>
+
+            <%= link_to 'Back', personal_informations_path %>
+        </div>
+    </div>
 </div>
-
-<%= render 'form', personal_information: @personal_information %>
-
-<%= link_to 'Back', personal_informations_path %>
