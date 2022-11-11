@@ -8,14 +8,7 @@
       <%= line_chart Attendence.group(:day_of_event).count.sort_by {|k,v| k}.reverse[0..11], xtitle: "Date", ytitle: "Attendence" %>
     <br>
     <br>
-    <table class="table_center">
-      <thead>
-        <tr>
-          <th><%= link_to "Student UIN", :sort => "uin" %></th>
-          <th><%= link_to "Date of Attendance", :sort => "day_of_event" %></th>
-          <th colspan='3'></th>
-        </tr>
-      </thead>
+    
           <table class="table_center">
             <thead>
               <tr>
