@@ -9,7 +9,7 @@ class AttendencesController < ApplicationController
 
     case params[:sort]
     when 'uin'
-      @statistics = Statistic.order('uin')
+      @statistics = Statistic.order("#{params[:sort]} uin")
     when 'day_of_event'
       @statistics = Statistic.order("#{params[:sort]} day_of_event")
     end
