@@ -95,3 +95,31 @@ a:hover, a:active {
     text-align: center;
     display: inline-block;
 }
+
+
+input{
+    color: white;
+    outline: none;
+    outline-color: #5A2B39;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #5A2B39;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin-top: 1%;
+}
+
+.field_with_errors{
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+}
+
+#error_explanation{
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    margin-bottom: 1%;
+}
