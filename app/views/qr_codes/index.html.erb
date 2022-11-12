@@ -1,7 +1,6 @@
 <div class="center">
   <div class="background_color">
     <div class="font">
-      <p id="notice"><%= notice %></p>
 
       <div class="header_all">
         <h1>Qr Codes</h1>
@@ -11,8 +10,8 @@
         <tbody>
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Qr Code Link</th>
+              <th><%= link_to "Title", :sort => "title" %></th>
+              <th><%= link_to "Qr Code Link", :sort => "qr_url" %></th>
               <th colspan="3"></th>
             </tr>
           </thead>
