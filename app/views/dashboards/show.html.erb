@@ -1,2 +1,9 @@
-<h1>You're logged in! Welcome to the Admin Dashboard!</h1>
-<%= link_to "Sign Out", destroy_admin_session_path %>
+<div class="center">
+    <div class="background_color">
+        <div class="font">
+        <%=image_tag("logo.png", alt: "Logo", :size => "490x400")%>
+            <h1>You're logged in! Welcome to the Admin Dashboard!</h1>
+            <%= link_to "Sign Out", destroy_admin_session_path %>
+        </div>
+    </div>
+</div>

@@ -1,36 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="center">
+  <div class="background_color">
+    <div class="font">
+      <p id="notice"><%= notice %></p>
 
-<h1>Qr Codes</h1>
+      <div class="header_all">
+        <h1>Qr Codes</h1>
+      </div>
+      
+      <table class="table_center">
+        <tbody>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Qr Code Link</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+        </tbody>
 
-<table>
-  <tbody>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Qr Code Link</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-  </tbody>
+        <tbody>
+          <% @qr_codes.each do |qr_code| %>
+            <tr>
+              <td><%= qr_code.title %></td>
+              <td>
+              <%= link_to "Qr Code Link", qr_code.qr_url, :target => "_blank" %>
+              </td>
+              <td><%= link_to 'Show', qr_code %></td>
+              <td><%= link_to 'Edit', edit_qr_code_path(qr_code) %></td>
+              <td><%= link_to 'Destroy', qr_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-  <tbody>
-    <% @qr_codes.each do |qr_code| %>
-      <tr>
-        <td><%= qr_code.title %></td>
-        <td>
-        <%= link_to "Qr Code Link", qr_code.qr_url, :target => "_blank" %>
-        </td>
-        <td><%= link_to 'Show', qr_code %></td>
-        <td><%= link_to 'Edit', edit_qr_code_path(qr_code) %></td>
-        <td><%= link_to 'Destroy', qr_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<br>
-<%= link_to 'New Qr Code', new_qr_code_path %>
-<br>
-<br>
-<%= link_to 'Back', homes_path %>
+      <br>
+      <br>
+      <%= link_to 'New Qr Code', new_qr_code_path %>
+      <br>
+      <br>
+      <%= link_to 'Back', homes_path %>
+    </div>
+  </div>
+</div>

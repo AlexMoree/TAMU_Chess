@@ -15,7 +15,7 @@ class StatisticsController < ApplicationController
     elsif params[:sort] == 'chess_username'
       @statistics = Statistic.order('chess_username')
     elsif params[:sort] == 'lichess_username'
-      @statistics = Statistic.order('lichess_username')
+      @statistics = Statistic.order("#{params[:sort]} lichess_username")
     elsif !params[:sort].nil?
       @statistics = Statistic.order("#{params[:sort]} DESC")
     end
