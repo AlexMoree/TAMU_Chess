@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PersonalInformationsController < ApplicationController
-  before_action :authenticate_admin!, except: :new
+  before_action :authenticate_admin!, except: %i[new show create]
   before_action :set_personal_information, only: %i[show edit update destroy]
 
   # GET /personal_informations or /personal_informations.json

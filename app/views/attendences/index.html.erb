@@ -9,7 +9,7 @@
     <div class="line_chart">
       <%= column_chart Attendence.group(:day_of_event).count.sort_by {|k,v| k}.reverse[0..11], 
       xtitle: "Date" , 
-      ytitle: "Attendance", colors: ["#FFF"]%>
+      ytitle: "Attendance", colors: ["#FFF"], line_colors: ["#FFF"]%>
     </div>
     <br>
     <br>

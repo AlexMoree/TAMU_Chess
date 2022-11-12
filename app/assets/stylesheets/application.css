@@ -128,3 +128,18 @@ input{
 .background_img{
     background-image: url("bcg.png");
 }
+
+#chart-1{
+    color: white;
+}
+
+element.style{
+    color: #FFF;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#personal_information_membership{
+    color: #5A2B39;
+    size: large;
+}
