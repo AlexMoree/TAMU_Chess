@@ -1,36 +1,49 @@
-<p id='notice'><%= notice %></p>
+<div class="center">
+  <div class="background_color">
+    <div class="font">
+      <p id='notice'><%= notice %></p>
 
-<h1>Attendances</h1>
+      <div class="header_all">
+        <h1>Attendances</h1>
+      </div>
+    <div class="line_chart">
+      <%= column_chart Attendence.group(:day_of_event).count.sort_by {|k,v| k}.reverse[0..11], 
+      xtitle: "Date" , 
+      ytitle: "Attendance", colors: ["#FFF"]%>
+    </div>
+    <br>
+    <br>
+    
+          <table class="table_center">
+            <thead>
+              <tr>
+                <th><%= link_to "Student UIN", :sort => "uin" %></th>
+                <th><%= link_to "Date of Attendance", :sort => "day_of_event" %></th>
+                <th colspan='3'></th>
+              </tr>
+            </thead>
 
-<%= line_chart Attendence.group(:day_of_event).count.sort_by {|k,v| k}.reverse[0..11], xtitle: "Date", ytitle: "Attendence" %>
+            <tbody>
+              <% @attendences.each do |attendence| %>
+                <tr>
+                  <td><%= attendence.uin %></td>
+                  <td><%= attendence.day_of_event %></td>
+                  <td><%= link_to 'Edit', edit_attendence_path(attendence) %></td>
+                  <td><%= link_to 'Destroy', attendence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= link_to "Student UIN", :sort => "uin" %></th>
-      <th><%= link_to "Date of Attendance", :sort => "day_of_event" %></th>
-      <th colspan='3'></th>
-    </tr>
-  </thead>
+      <br>
+      <br>
+      <%= link_to 'New', new_attendence_path %>
+      <br>
+      <br>
+      <%= link_to 'Back', homes_path %>
+      <br>
+      <br>
 
-  <tbody>
-    <% @attendences.each do |attendence| %>
-      <tr>
-        <td><%= attendence.uin %></td>
-        <td><%= attendence.day_of_event %></td>
-        <!--
-        <td><%= link_to 'Show', attendence %></td>
-        -->
-        <td><%= link_to 'Edit', edit_attendence_path(attendence) %></td>
-        <td><%= link_to 'Destroy', attendence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<br>
-<%= link_to 'New', new_attendence_path %>
-<br>
-<br>
-<%= link_to 'Back', homes_path %>
+    </div>
+  </div>
+</div>

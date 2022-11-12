@@ -1,54 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="center">
+  <div class="background_color">
+    <div class="font">
+        <div class="header_all">
+          <h1>Personal Information</h1>
+         </div>
 
-<h1>Personal Information</h1>
+        <%= link_to "Show student with membership only", :paid => "true" %>
+        <%= link_to "Show all students", :paid => "false" %>
 
-<!-- checkbox or sth else to manipulate @sort value  -->
-<!-- maybe add <link to> as update does to refresh and reload the entire table with sorted values -->
+        <br>
+        <br>
+          <table class="table_center">
+            <thead>
+              <tr>
+                <th><%= link_to "Student UIN", :sort => "uin" %></th>
+                <th><%= link_to "First Name", :sort => "first_name" %></th>
+                <th><%= link_to "Last Name", :sort => "last_name" %></th>
+                <th><%= link_to "Email", :sort => "email" %></th>
+                <th><%= link_to "Membership", :sort => "membership" %></th>
+                <th><%= link_to "Start Date", :sort => "start_date" %></th>
+                <th><%= link_to "End Date", :sort => "end_date" %></th>
+                <th><%= link_to "Discord Username", :sort => "discord_username" %></th>
+                <th><%= link_to "Chess.com Username", :sort => "chess_com_username" %></th>
+                <th><%= link_to "Lichess.org Username", :sort => "lichess_org_username" %></th>
+                <th colspan="3"></th>
+              </tr> 
+            </thead>
 
-<%= link_to "Show student with membership only", :paid => "true" %>
-<%= link_to "Show all students", :paid => "false" %>
+            <tbody>
+              <% @personal_informations.each do |personal_information| %>
+                <tr>
+                  <td><%= personal_information.uin %></td>
+                  <td><%= personal_information.first_name %></td>
+                  <td><%= personal_information.last_name %></td>
+                  <td><%= personal_information.email %></td>
+                  <td><%= personal_information.membership %></td>
+                  <td><%= personal_information.start_date %></td>
+                  <td><%= personal_information.end_date %></td>
+                  <td><%= personal_information.discord_username %></td>
+                  <td><%= personal_information.chess_com_username %></td>
+                  <td><%= personal_information.lichess_org_username %></td>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= link_to "Student UIN", :sort => "uin" %></th>
-      <th><%= link_to "First Name", :sort => "first_name" %></th>
-      <th><%= link_to "Last Name", :sort => "last_name" %></th>
-      <th>Email</th>
-      <th>Membership</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th><%= link_to "Discord Username", :sort => "discord_username" %></th>
-      <th><%= link_to "Chess.com Username", :sort => "chess_com_username" %></th>
-      <th><%= link_to "Lichess.org Username", :sort => "lichess_org_username" %></th>
-      <th colspan="3"></th>
-    </tr> 
-  </thead>
+                  <td><%= link_to 'Edit', edit_personal_information_path(personal_information) %></td>
+                  <td><%= link_to 'Destroy', personal_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+        </table>
+        
 
-  <tbody>
-    <% @personal_informations.each do |personal_information| %>
-      <tr>
-        <td><%= personal_information.uin %></td>
-        <td><%= personal_information.first_name %></td>
-        <td><%= personal_information.last_name %></td>
-        <td><%= personal_information.email %></td>
-        <td><%= personal_information.membership %></td>
-        <td><%= personal_information.start_date %></td>
-        <td><%= personal_information.end_date %></td>
-        <td><%= personal_information.discord_username %></td>
-        <td><%= personal_information.chess_com_username %></td>
-        <td><%= personal_information.lichess_org_username %></td>
-
-        <td><%= link_to 'Edit', edit_personal_information_path(personal_information) %></td>
-        <td><%= link_to 'Destroy', personal_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<br>
-<%= link_to 'New', new_personal_information_path %>
-<br>
-<br>
-<%= link_to 'Back', homes_path %>
+        <br>
+        <br>
+        <%= link_to 'New', new_personal_information_path %>
+        <br>
+        <br>
+        <%= link_to 'Back', homes_path %>
+        <br>
+      <br>
+      </div>
+    </div>
+  </div>

@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="center">
+    <div class="background_color">
+        <div class="font">
 
-<p>
-  <strong>Title</strong>
-  <%= @qr_code.title %>
-</p>
+          <p>
+            <strong>Title</strong>
+            <%= @qr_code.title %>
+          </p>
 
-<p>
-  <strong>Qr Code Link</strong>
-  <%= @qr_code.qr_url %>
-</p>
+          <p>
+            <strong>Qr Code Link</strong>
+            <%= @qr_code.qr_url %>
+          </p>
 
-<%= link_to 'Edit', edit_qr_code_path(@qr_code) %> |
-<%= link_to 'Back', qr_codes_path %>
+          <%= link_to 'Edit', edit_qr_code_path(@qr_code) %> |
+          <%= link_to 'Back', qr_codes_path %>
+        </div>
+      </div>
+    </div>

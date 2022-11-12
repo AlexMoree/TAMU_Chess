@@ -7,12 +7,7 @@ class AttendencesController < ApplicationController
   def index
     @attendences = Attendence.all
 
-    case params[:sort]
-    when 'uin'
-      @statistics = Statistic.order('uin')
-    when 'day_of_event'
-      @statistics = Statistic.order("#{params[:sort]} day_of_event")
-    end
+    @attendences = Attendence.order(params[:sort])
   end
 
   # GET /attendences/1 or /attendences/1.json

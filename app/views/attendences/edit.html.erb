@@ -1,6 +1,22 @@
-<h1>Editing Attendence</h1>
+<div class="center">
+    <div class="background_color">
+        <div class="font">
+        
+        <div class="header_all">
+            <h1>Editing Attendence</h1>
+        </div>
+        <br>
+        <br>
+        <%= render 'form1', attendence: @attendence %>
+        <br>
+        <br>
+        <%= link_to 'Show', @attendence %>
+        <br>
+        <br>
+        <%= link_to 'Back', attendences_path %>
+        <br>
+        <br>
+        </div>
+    </div>
+</div>
 
-<%= render 'form', attendence: @attendence %>
-
-<%= link_to 'Show', @attendence %> |
-<%= link_to 'Back', attendences_path %>

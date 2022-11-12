@@ -7,6 +7,8 @@ class QrCodesController < ApplicationController
   # GET /qr_codes or /qr_codes.json
   def index
     @qr_codes = QrCode.all
+
+    @qr_codes = QrCode.order(params[:sort])
   end
 
   # GET /qr_codes/1 or /qr_codes/1.json
