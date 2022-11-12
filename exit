@@ -1,0 +1,36 @@
+[33mcommit a90196d5e09d50c1202533fa40bfd196c7ae8f84[m[33m ([m[1;36mHEAD -> [m[1;32mnew_style[m[33m, [m[1;31morigin/new_style[m[33m)[m
+Author: rishiamarnath1 <rishiamarnath1@gmail.com>
+Date:   Fri Nov 11 18:32:40 2022 -0600
+
+    added new background image, changed some formatting of table, and updated. graph left to do
+
+[33mcommit 62f8455a4f3e5d39464cdeb5b50f794cfb751c3c[m
+Author: rishiamarnath1 <rishiamarnath1@gmail.com>
+Date:   Fri Nov 11 16:57:50 2022 -0600
+
+    some header fixing with spacing as well
+
+[33mcommit d1f1179b3015b2cb313e8c93da470355690227cd[m
+Author: rishiamarnath1 <rishiamarnath1@gmail.com>
+Date:   Fri Nov 11 12:19:09 2022 -0600
+
+    formatting of other pages taken care of, statistics table now working, only graph left
+
+[33mcommit fe94efca2726fcb3c8ce75894fa65fb9c7caff14[m
+Author: rishiamarnath1 <rishiamarnath1@gmail.com>
+Date:   Fri Nov 11 00:58:06 2022 -0600
+
+    tables formatted completely, buttons updated in style, forms match color scheme
+
+[33mcommit 7fcf2163781b196be0df48429217dde862331cfa[m
+Merge: ac06dd3 d873424
+Author: Aditya Bhavikati <abhavikati2017@tamu.edu>
+Date:   Wed Nov 9 00:26:24 2022 -0600
+
+    home image formatted
+
+[33mcommit d87342456d664c66e3758877c5b5078128269e35[m
+Author: rishiamarnath1 <rishiamarnath1@gmail.com>
+Date:   Wed Nov 9 00:07:19 2022 -0600
+
+    tables centered, forms adjusted to center, need to format buttons and table borders, along with image adding

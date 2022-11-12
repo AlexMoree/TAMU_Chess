@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="center">
+  <div class="background_color">
+    <div class="font">
+      <p id="notice"><%= notice %></p>
+      
+      <div class="header_all">
+        <h1>Statistics</h1>
+      </div>
 
-<h1>Statistics</h1>
-
-<table>
+<table class="table_center">
   <thead>
     <tr>
       <th><%= link_to "Name", :sort => "actual_name" %></th>
@@ -38,9 +43,12 @@
   </tbody>
 </table>
 
-<br>
-<br>
-<%= link_to 'Update', statistics_path %>
-<br>
-<br>
-<%= link_to 'Back', homes_path %>
+      <br>
+      <br>
+      <%= link_to 'Update', statistics_path %>
+      <br>
+      <br>
+      <%= link_to 'Back', homes_path %>
+    </div>
+  </div>
+</div>
