@@ -83,3 +83,7 @@ a:hover, a:active {
 .line_chart{
  color: white;
 }
+
+.bottom_marg{
+    margin-bottom: 5%;
+}
