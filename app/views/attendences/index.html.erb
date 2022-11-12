@@ -6,8 +6,11 @@
       <div class="header_all">
         <h1>Attendances</h1>
       </div>
-
-      <%= line_chart Attendence.group(:day_of_event).count.sort_by {|k,v| k}.reverse[0..11], xtitle: "Date", ytitle: "Attendence" %>
+    <div class="line_chart">
+      <%= column_chart Attendence.group(:day_of_event).count.sort_by {|k,v| k}.reverse[0..11], 
+      xtitle: "Date" , 
+      ytitle: "Attendance", colors: ["#FFF"]%>
+    </div>
     <br>
     <br>
     
