@@ -25,9 +25,6 @@
                 <tr>
                   <td><%= attendence.uin %></td>
                   <td><%= attendence.day_of_event %></td>
-                  <!--
-                  <td><%= link_to 'Show', attendence %></td>
-                  -->
                   <td><%= link_to 'Edit', edit_attendence_path(attendence) %></td>
                   <td><%= link_to 'Destroy', attendence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
