@@ -41,6 +41,12 @@ class StatisticsController < ApplicationController
       return [0, 0, 0]
     end
 
+    if username.include? "/"
+      username = 'No Username'
+      puts 'ERROR: username blank'
+      return [0, 0, 0]
+    end
+
     lower_case_username = username.downcase
 
     begin
@@ -105,6 +111,11 @@ class StatisticsController < ApplicationController
   def get_http_request_lichess(username)
     if username == 'No Username'
       puts 'username blank'
+      return [0, 0, 0]
+    end
+    if username.include? "/"
+      puts 'username blank'
+      username = 'No Username'
       return [0, 0, 0]
     end
 
@@ -172,12 +183,18 @@ class StatisticsController < ApplicationController
 
       current_username_one = personal_information.lichess_org_username
       current_username_two = personal_information.chess_com_username
+
       puts 'lichess username:'
       current_username_one = 'No Username' if current_username_one == ''
+      current_username_one = 'No Username' if current_username_one.include? '/'
       puts current_username_one
+
       puts 'chess.com username:'
       current_username_two = 'No Username' if current_username_two == ''
+      current_username_two = 'No Username' if current_username_two.include? '/'
       puts current_username_two
+
+
 
       current_stats_one = get_http_request_lichess(current_username_one)
       puts 'current_stats_one~~~~~~~~~~~~~~~~~:'
