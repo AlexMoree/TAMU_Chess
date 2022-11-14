@@ -68,6 +68,7 @@ class AttendencesController < ApplicationController
     if x == '1231' || x == '0602'
       past_attendances.each do |past_attendance|
         past_attendance.destroy
+      end
     end
   end
   helper_method :update_attendance_table
