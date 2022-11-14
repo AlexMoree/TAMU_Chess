@@ -59,6 +59,20 @@ class AttendencesController < ApplicationController
     end
   end
 
+  def update_attendance_table
+    t = Time.now
+    x = t.strftime('%m%d')
+
+    past_attendances = Attendence.all
+
+    if x == '1231' || x == '0602'
+      past_attendances.each do |past_attendance|
+        past_attendance.destroy
+      end
+    end
+  end
+  helper_method :update_attendance_table
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

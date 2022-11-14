@@ -65,7 +65,7 @@
               <% if t.mon < 8  %>
                 <% x = x + '-06-01' %>
               <% else %>
-                <% x = x + '-12-31' %>
+                <% x = x + '-12-30' %>
               <% end %>
               
               <%= form.date_field :end_date, :value => x %>
