@@ -176,8 +176,7 @@ class StatisticsController < ApplicationController
       puts 'actual_Name                 :'
       puts actual_name
 
-
-      puts "uin"
+      puts 'uin'
       uin = personal_information.uin
       puts uin
 
