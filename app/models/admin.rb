@@ -6,7 +6,9 @@ class Admin < ApplicationRecord
   def self.from_google(email:, full_name:, uid:, avatar_url:)
     # return nil unless email =~ /@gmail.com || @tamu.edu\z/
 
-    return nil unless (email == 'yusufb@tamu.edu') || (email == 'abhavikati@gmail.com') || (email == 'alex_moree@tamu.edu') || (email == 'jaylockwood@tamu.edu') || (email == 'rishiamarnath1@gmail.com') || (email == 'sheonlee98@tamu.edu') || (email == 'tamuchess@gmail.com')
+    unless (email == 'yusufb@tamu.edu') || (email == 'abhavikati@gmail.com') || (email == 'alex_moree@tamu.edu') || (email == 'jaylockwood@tamu.edu') || (email == 'rishiamarnath1@gmail.com') || (email == 'sheonlee98@tamu.edu') || (email == 'tamuchess@gmail.com') || (email == 'bhanu@tamu.edu')
+      return nil
+    end
 
     create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
   end

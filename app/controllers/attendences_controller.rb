@@ -65,11 +65,7 @@ class AttendencesController < ApplicationController
 
     past_attendances = Attendence.all
 
-    if x == '1231' || x == '0602'
-      past_attendances.each do |past_attendance|
-        past_attendance.destroy
-      end
-    end
+    past_attendances.each(&:destroy) if %w[1231 0602].include?(x)
   end
   helper_method :update_attendance_table
 

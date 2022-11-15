@@ -15,7 +15,7 @@ class StatisticsController < ApplicationController
     elsif params[:sort] == 'chess_username'
       @statistics = Statistic.order('chess_username')
     elsif params[:sort] == 'lichess_username'
-      @statistics = Statistic.order("#{params[:sort]}")
+      @statistics = Statistic.order(params[:sort].to_s)
     elsif !params[:sort].nil?
       @statistics = Statistic.order("#{params[:sort]} DESC")
     end
@@ -41,7 +41,7 @@ class StatisticsController < ApplicationController
       return [0, 0, 0]
     end
 
-    if username.include? "/"
+    if username.include? '/'
       username = 'No Username'
       puts 'ERROR: username blank'
       return [0, 0, 0]
@@ -113,7 +113,7 @@ class StatisticsController < ApplicationController
       puts 'username blank'
       return [0, 0, 0]
     end
-    if username.include? "/"
+    if username.include? '/'
       puts 'username blank'
       username = 'No Username'
       return [0, 0, 0]
@@ -192,8 +192,6 @@ class StatisticsController < ApplicationController
       current_username_two = 'No Username' if current_username_two == ''
       current_username_two = 'No Username' if current_username_two.include? '/'
       puts current_username_two
-
-
 
       current_stats_one = get_http_request_lichess(current_username_one)
       puts 'current_stats_one~~~~~~~~~~~~~~~~~:'
