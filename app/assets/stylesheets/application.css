@@ -31,7 +31,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+    overflow-x: auto;
     background-image: url("bcg.png");
 }
 .font{
