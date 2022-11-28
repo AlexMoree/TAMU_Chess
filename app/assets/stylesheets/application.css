@@ -15,6 +15,9 @@
  */
 .center {
     text-align: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("bcg.png");
 }
 .main_header {
     font-family: TimesNewRoman;
@@ -29,9 +32,8 @@ body {
     background-color: #5A2B39;
     position: absolute;
     width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    background-image: url("bcg.png");
+    height: 100%;
+    overflow-x: visible;
 }
 .font{
     font-size: large;
