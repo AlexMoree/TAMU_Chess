@@ -30,6 +30,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100vh;
+    overflow-x: visible;
     background-image: url("bcg.png");
 }
 .font{
