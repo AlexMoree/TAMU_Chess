@@ -61,7 +61,9 @@ The application can be seen using a browser and navigating to http://localhost:3
 These values are located in both config/environments/development.rb and config/environments/production.rb on line 6.
 
 The values are currently:
+
 ENV['GOOGLE_OAUTH_CLIENT_ID'] = '930403782664-cljh5k296dgnqqraucc932b5208bffko.apps.googleusercontent.com'
+
 ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
 
 ## CI/CD ##
