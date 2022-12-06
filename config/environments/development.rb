@@ -3,8 +3,10 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
+  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '930403782664-cljh5k296dgnqqraucc932b5208bffko.apps.googleusercontent.com'
+  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
   # Settings specified here will take precedence over those in config/application.rb.
-
+  
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -78,6 +80,4 @@ Rails.application.configure do
 
   # for google auth
   config.web_console.permissions = '172.17.0.1'
-  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '930403782664-cljh5k296dgnqqraucc932b5208bffko.apps.googleusercontent.com'
-  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
 end
