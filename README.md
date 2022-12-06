@@ -58,7 +58,8 @@ The application can be seen using a browser and navigating to http://localhost:3
 ## Environmental Variables/Files ##
 
 2 ENV variables 'GOOGLE_OAUTH_CLIENT_ID', and 'GOOGLE_OAUTH_CLIENT_SECRET', are used for the Google oatuh2 login. If a new credentials is created, you will need to update these values according to the new values generated.
-These values are located in both config/environments/development.rb and config/environments/production.rb on line 6
+These values are located in both config/environments/development.rb and config/environments/production.rb on line 6.
+
 The values are currently:
 ENV['GOOGLE_OAUTH_CLIENT_ID'] = '930403782664-cljh5k296dgnqqraucc932b5208bffko.apps.googleusercontent.com'
 ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
