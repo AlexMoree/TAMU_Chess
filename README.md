@@ -66,6 +66,19 @@ ENV['GOOGLE_OAUTH_CLIENT_ID'] = '930403782664-cljh5k296dgnqqraucc932b5208bffko.a
 
 ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
 
+## Deployment ##
+
+1. Create a new Heroku pipeline
+2. Connect Github repository to Heroku
+3. Name the application "tamu-chess-app"
+4. Open a command prompt and navigate to the repository of the application "TAMU_Chess"
+5. enter 'Heroku login'
+6. Stage the application and select the main branch.
+7. Click auto-deploy.
+8. Build the application.
+9. Your testing application will deploy. After succesfully deploying, move the app from testing to production.
+
+
 ## CI/CD ##
 
 Continuous integration is implemented using Github Actions. Whenever code is pushed to a branch, you can check the Actions tab in Github to view the results of the rspec, brakeman, and rubocop tests. Continous deployment is implemented using a Heroku pipeline. Whenever the main branch of this Github repository is updated, if it passes all of the automated testing, it'll automatically deploy the new version of the app in Heroku at https://tamu-chess-app.herokuapp.com/
@@ -73,3 +86,5 @@ Continuous integration is implemented using Github Actions. Whenever code is pus
 ## Support ##
 
 email: alex_moree@tamu.edu
+
+There is also a file named documentation.pdf in this repository that contains additional information.
