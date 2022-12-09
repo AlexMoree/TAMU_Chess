@@ -143,3 +143,11 @@ element.style{
     color: #5A2B39;
     size: large;
 }
+
+.image_1{
+    width: 400px;
+    height: 1000px;
+    text-align: center;
+    border-color: #FFF;
+    background-image: url("Homepage.png");
+}
